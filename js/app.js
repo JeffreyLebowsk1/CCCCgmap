@@ -25,6 +25,11 @@
         Cloud Console > Google Maps Platform > Map Management > Create Map ID
       Select Map type: JavaScript, choose a colour scheme, then copy the ID.
    5. Paste both values below.
+
+   AI VISION (optional):
+   6. Visit https://aistudio.google.com/app/apikey and create a free Gemini API key.
+   7. Paste it as geminiApiKey below to enable the "🔍 Identify Buildings with AI" button.
+      Restrict the key to the Gemini API and your domain via Google Cloud Console.
    ============================================================ */
 const CONFIG = {
   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY',
@@ -32,6 +37,7 @@ const CONFIG = {
   version: 'weekly',              // Tracks the current stable release
   region:  'US',
   language: 'en',
+  geminiApiKey: 'YOUR_GEMINI_API_KEY', // Optional – enables AI building identification
 };
 
 /* ============================================================
@@ -205,6 +211,7 @@ async function initMap() {
     buildSidebar(AdvancedMarkerElement, PinElement);
     buildLegend();
     wireToolbarButtons();
+    wireAiVisionModal();
     hideSplashScreen();
     showApiKeyBannerIfNeeded();
 
@@ -432,6 +439,14 @@ function renderCampusInfo(campus, container) {
        </a>`
     : '';
 
+  const aiBtn = campus.campusPdf
+    ? `<button class="ci-ai-btn"
+               data-campus-id="${escapeHtml(campus.id)}"
+               aria-label="Identify buildings in the campus map PDF using AI vision for ${escapeHtml(campus.name)}">
+        🔍 Identify Buildings with AI
+       </button>`
+    : '';
+
   container.innerHTML = `
     <div class="ci-name">${escapeHtml(campus.name)}</div>
     <div class="ci-address">${escapeHtml(campus.address)}</div>
@@ -449,7 +464,14 @@ function renderCampusInfo(campus, container) {
       🧭 Get Directions
     </a>
     ${pdfLink}
+    ${aiBtn}
   `;
+
+  /* Wire AI button after innerHTML is set */
+  const btn = container.querySelector('.ci-ai-btn');
+  if (btn) {
+    btn.addEventListener('click', () => showAiVisionModal(campus));
+  }
 }
 
 /* ============================================================
@@ -830,6 +852,177 @@ function showApiKeyBannerIfNeeded() {
       CONFIG.mapId  === 'YOUR_MAP_ID') {
     document.getElementById('api-key-banner').hidden = false;
   }
+}
+
+/* ============================================================
+   AI VISION – PDF BUILDING IDENTIFICATION
+   Uses PDF.js to render the campus map PDF to an image and then
+   calls the Google Gemini Vision API to identify buildings.
+   ============================================================ */
+
+/**
+ * Render the first page of a PDF to a base64-encoded JPEG string.
+ * Requires PDF.js 4.x (loaded from CDN in index.html).
+ * @param {string} pdfUrl - Relative or absolute URL of the PDF file.
+ * @returns {Promise<string>} Base64-encoded JPEG (without data-URI prefix).
+ */
+async function renderPdfToImage(pdfUrl) {
+  const lib = window.pdfjsLib;
+  if (!lib) throw new Error('PDF.js library not loaded.');
+
+  lib.GlobalWorkerOptions.workerSrc =
+    'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/legacy/build/pdf.worker.min.js';
+
+  const loadingTask = lib.getDocument(pdfUrl);
+  const pdf         = await loadingTask.promise;
+  const page        = await pdf.getPage(1);
+
+  /* Render at 2× scale for better AI recognition quality */
+  const viewport = page.getViewport({ scale: 2.0 });
+  const canvas   = document.createElement('canvas');
+  canvas.width   = viewport.width;
+  canvas.height  = viewport.height;
+
+  await page.render({
+    canvasContext: canvas.getContext('2d'),
+    viewport,
+  }).promise;
+
+  /* Return only the base64 payload (strip "data:image/jpeg;base64," prefix) */
+  return canvas.toDataURL('image/jpeg', 0.85).split(',')[1];
+}
+
+/**
+ * Send a base64 image to the Google Gemini Vision API and return the
+ * model's text response identifying buildings in the campus map.
+ * @param {string} base64Image - JPEG image data (base64, no prefix).
+ * @param {string} campusName  - Human-readable campus name for context.
+ * @returns {Promise<string>} Plain-text AI response.
+ */
+async function callGeminiVision(base64Image, campusName) {
+  const endpoint =
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${CONFIG.geminiApiKey}`;
+
+  const prompt =
+    `This is a campus map for ${campusName} (Central Carolina Community College). ` +
+    `Please identify all buildings, facilities, and areas visible on this map. ` +
+    `For each location list:\n` +
+    `- Building name or label exactly as shown on the map\n` +
+    `- Building or room number (if shown)\n` +
+    `- A brief description of its likely purpose\n\n` +
+    `Format your answer as a numbered list. ` +
+    `If a label is partially legible, include it with a note.`;
+
+  const response = await fetch(endpoint, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [{
+        parts: [
+          { inlineData: { mimeType: 'image/jpeg', data: base64Image } },
+          { text: prompt },
+        ],
+      }],
+      generationConfig: { temperature: 0.1, maxOutputTokens: 1024 },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error?.message || `Gemini API error (HTTP ${response.status})`);
+  }
+
+  const data = await response.json();
+  return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ??
+    'No buildings could be identified.';
+}
+
+/**
+ * Open the AI Vision modal and run the identification pipeline for the given campus.
+ * @param {object} campus - Campus object from campuses.json.
+ */
+async function showAiVisionModal(campus) {
+  const modal   = document.getElementById('ai-vision-modal');
+  const title   = document.getElementById('ai-modal-title');
+  const status  = document.getElementById('ai-modal-status');
+  const results = document.getElementById('ai-modal-results');
+
+  title.textContent   = `AI Building Identification – ${campus.name}`;
+  status.textContent  = '';
+  results.innerHTML   = '';
+  modal.hidden        = false;
+  document.getElementById('ai-modal-close').focus();
+
+  /* Guard: no PDF available */
+  if (!campus.campusPdf) {
+    results.innerHTML =
+      '<p class="ai-error">No PDF map is available for this campus.</p>';
+    return;
+  }
+
+  /* Guard: Gemini API key not configured */
+  if (CONFIG.geminiApiKey === 'YOUR_GEMINI_API_KEY') {
+    results.innerHTML = `
+      <div class="ai-setup-notice">
+        <p>🔑 <strong>Gemini API key not configured.</strong></p>
+        <p>To enable AI building identification:</p>
+        <ol>
+          <li>Visit <a href="https://aistudio.google.com/app/apikey"
+                       target="_blank" rel="noopener noreferrer">Google AI Studio</a>
+              and create a free API key.</li>
+          <li>Open <code>js/app.js</code> and replace
+              <code>YOUR_GEMINI_API_KEY</code> with the key you just created.</li>
+          <li>Optionally restrict the key to the Gemini API and your domain
+              in the <a href="https://console.cloud.google.com/"
+                        target="_blank" rel="noopener noreferrer">Google Cloud Console</a>.</li>
+        </ol>
+      </div>`;
+    return;
+  }
+
+  try {
+    status.innerHTML =
+      '<span class="ai-spinner" aria-hidden="true"></span> Rendering PDF page…';
+    const base64Image = await renderPdfToImage(campus.campusPdf);
+
+    status.innerHTML =
+      '<span class="ai-spinner" aria-hidden="true"></span> Analysing with Gemini AI…';
+    const text = await callGeminiVision(base64Image, campus.name);
+
+    status.textContent = '';
+    results.innerHTML  =
+      `<div class="ai-results-text">${escapeHtml(text).replace(/\n/g, '<br>')}</div>`;
+  } catch (err) {
+    status.textContent = '';
+    results.innerHTML  =
+      `<div class="ai-error">⚠ ${escapeHtml(err.message)}</div>`;
+  }
+}
+
+/** Close the AI Vision modal and return focus to the triggering element. */
+function closeAiVisionModal() {
+  const modal = document.getElementById('ai-vision-modal');
+  modal.hidden = true;
+  /* Return focus to the AI button in the sidebar if it exists */
+  const activeAiBtn = document.querySelector('.ci-ai-btn');
+  if (activeAiBtn) activeAiBtn.focus();
+}
+
+/** Wire up the AI Vision modal close button and backdrop click. */
+function wireAiVisionModal() {
+  document.getElementById('ai-modal-close').addEventListener('click', closeAiVisionModal);
+
+  /* Close when clicking the backdrop */
+  document.getElementById('ai-vision-modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('ai-vision-modal')) closeAiVisionModal();
+  });
+
+  /* Close on Escape key */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !document.getElementById('ai-vision-modal').hidden) {
+      closeAiVisionModal();
+    }
+  });
 }
 
 /* ============================================================

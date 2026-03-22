@@ -97,6 +97,15 @@
   </script>
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!--
+    PDF.js 4.10.38 – renders PDF pages to <canvas> for AI Vision.
+    Using the legacy UMD build so it works without ES module support.
+    Version 4.10.38 is patched against CVE-2024-4367 (arbitrary JS execution).
+    Source: https://github.com/mozilla/pdf.js
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/legacy/build/pdf.min.js"
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -241,6 +250,28 @@
       See <code>README.md</code> for full setup instructions.
     </span>
     <button id="banner-dismiss" aria-label="Dismiss notice">Dismiss</button>
+  </div>
+
+  <!--
+    AI Vision Modal – shown when the user clicks "Identify Buildings with AI".
+    Populated by showAiVisionModal() in app.js.
+  -->
+  <div id="ai-vision-modal"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="ai-modal-title"
+       hidden>
+    <div class="ai-modal-backdrop"></div>
+    <div class="ai-modal-content">
+      <div class="ai-modal-header">
+        <h2 id="ai-modal-title">AI Building Identification</h2>
+        <button id="ai-modal-close" aria-label="Close AI vision panel">✕</button>
+      </div>
+      <div class="ai-modal-body">
+        <p id="ai-modal-status"></p>
+        <div id="ai-modal-results"></div>
+      </div>
+    </div>
   </div>
 
   <!-- App logic (loaded before Maps bootstrap so CONFIG is available) -->
