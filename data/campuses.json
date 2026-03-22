@@ -17,7 +17,7 @@
       "zoom": 17,
       "color": "#003087",
       "description": "The main Lee County campus in Sanford, NC, offering a full range of academic and workforce programs.",
-      "campusPdf": "",
+      "campusPdf": "data/pdfs/lee-campus-map.pdf",
       "parkingLots": [
         { "id": "lee-p1", "name": "Lot A – Main Entrance", "lat": 35.4802, "lng": -79.1898 },
         { "id": "lee-p2", "name": "Lot B – East Side", "lat": 35.4790, "lng": -79.1880 },
@@ -144,7 +144,7 @@
       "zoom": 17,
       "color": "#C8102E",
       "description": "The Chatham County campus in Pittsboro, NC, serving the Chatham County community with academic and workforce programs.",
-      "campusPdf": "",
+      "campusPdf": "data/pdfs/chatham-campus-map.pdf",
       "parkingLots": [
         { "id": "chat-p1", "name": "Main Parking Lot", "lat": 35.7237, "lng": -79.1775 },
         { "id": "chat-p2", "name": "South Lot", "lat": 35.7228, "lng": -79.1768 }
@@ -210,7 +210,7 @@
       "zoom": 17,
       "color": "#007A33",
       "description": "The Harnett County campus in Lillington, NC, providing academic and workforce training to the Harnett County community.",
-      "campusPdf": "",
+      "campusPdf": "data/pdfs/harnett-campus-map.pdf",
       "parkingLots": [
         { "id": "harn-p1", "name": "Main Parking Lot", "lat": 35.3984, "lng": -78.8148 },
         { "id": "harn-p2", "name": "East Lot", "lat": 35.3975, "lng": -78.8132 }
