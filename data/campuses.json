@@ -1,0 +1,295 @@
+{
+  "college": {
+    "name": "Central Carolina Community College",
+    "abbreviation": "CCCC",
+    "website": "https://www.cccc.edu",
+    "phone": "(919) 775-5401",
+    "emergencyPhone": "911"
+  },
+  "campuses": [
+    {
+      "id": "lee",
+      "name": "Lee County Campus",
+      "address": "1105 Kelly Drive, Sanford, NC 27330",
+      "phone": "(919) 775-5401",
+      "lat": 35.4796,
+      "lng": -79.1894,
+      "zoom": 17,
+      "color": "#003087",
+      "description": "The main Lee County campus in Sanford, NC, offering a full range of academic and workforce programs.",
+      "parkingLots": [
+        { "id": "lee-p1", "name": "Lot A – Main Entrance", "lat": 35.4802, "lng": -79.1898 },
+        { "id": "lee-p2", "name": "Lot B – East Side", "lat": 35.4790, "lng": -79.1880 },
+        { "id": "lee-p3", "name": "Lot C – West Side", "lat": 35.4799, "lng": -79.1915 }
+      ],
+      "buildings": [
+        {
+          "id": "lee-b1",
+          "name": "Cameron Hall",
+          "shortName": "CAM",
+          "lat": 35.4801,
+          "lng": -79.1893,
+          "type": "academic",
+          "description": "Administrative offices, admissions, financial aid, and general education classrooms.",
+          "departments": ["Administration", "Admissions", "Financial Aid", "Business Office"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b2",
+          "name": "Dennis A. Wicker Civic & Conference Center",
+          "shortName": "DWACC",
+          "lat": 35.4793,
+          "lng": -79.1888,
+          "type": "event",
+          "description": "Civic and conference center hosting college events, community programs, and large gatherings.",
+          "departments": ["Event Services", "Community Programs"],
+          "accessibility": true,
+          "hours": "Varies by event"
+        },
+        {
+          "id": "lee-b3",
+          "name": "Chavis Hall",
+          "shortName": "CHA",
+          "lat": 35.4806,
+          "lng": -79.1897,
+          "type": "academic",
+          "description": "Science laboratories, nursing simulation labs, and health sciences classrooms.",
+          "departments": ["Nursing", "Health Sciences", "Biology", "Chemistry"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b4",
+          "name": "Horton Hall",
+          "shortName": "HOR",
+          "lat": 35.4797,
+          "lng": -79.1905,
+          "type": "academic",
+          "description": "Technology programs, computer labs, and information technology classrooms.",
+          "departments": ["Information Technology", "Computer Science", "Electronics"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b5",
+          "name": "Shank Hall",
+          "shortName": "SHA",
+          "lat": 35.4808,
+          "lng": -79.1885,
+          "type": "academic",
+          "description": "Workforce development programs, culinary arts, and continuing education.",
+          "departments": ["Workforce Development", "Culinary Arts", "Continuing Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b6",
+          "name": "Student Services Center",
+          "shortName": "SSC",
+          "lat": 35.4804,
+          "lng": -79.1901,
+          "type": "services",
+          "description": "Student services, counseling, career center, disability services, and testing center.",
+          "departments": ["Counseling", "Career Services", "Disability Services", "Testing Center"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b7",
+          "name": "Library / Learning Resource Center",
+          "shortName": "LRC",
+          "lat": 35.4800,
+          "lng": -79.1887,
+          "type": "library",
+          "description": "Library collections, computer labs, tutoring center, and study spaces.",
+          "departments": ["Library", "Tutoring Center", "Academic Support"],
+          "accessibility": true,
+          "hours": "Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b8",
+          "name": "Trades & Industrial Building",
+          "shortName": "TIB",
+          "lat": 35.4790,
+          "lng": -79.1906,
+          "type": "trades",
+          "description": "Automotive, welding, HVAC, electrical, and construction trades programs.",
+          "departments": ["Automotive", "Welding", "HVAC", "Electrical", "Construction Trades"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-gym",
+          "name": "Physical Education / Fitness Center",
+          "shortName": "GYM",
+          "lat": 35.4786,
+          "lng": -79.1896,
+          "type": "recreation",
+          "description": "Gymnasium, fitness center, and physical education facilities.",
+          "departments": ["Physical Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:00 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "chatham",
+      "name": "Chatham Campus",
+      "address": "764 West Street, Pittsboro, NC 27312",
+      "phone": "(919) 542-6495",
+      "lat": 35.7233,
+      "lng": -79.1770,
+      "zoom": 17,
+      "color": "#C8102E",
+      "description": "The Chatham County campus in Pittsboro, NC, serving the Chatham County community with academic and workforce programs.",
+      "parkingLots": [
+        { "id": "chat-p1", "name": "Main Parking Lot", "lat": 35.7237, "lng": -79.1775 },
+        { "id": "chat-p2", "name": "South Lot", "lat": 35.7228, "lng": -79.1768 }
+      ],
+      "buildings": [
+        {
+          "id": "chat-b1",
+          "name": "A Building – Main Building",
+          "shortName": "A",
+          "lat": 35.7234,
+          "lng": -79.1771,
+          "type": "academic",
+          "description": "Administrative offices, classrooms, computer labs, and student services for the Chatham Campus.",
+          "departments": ["Administration", "Student Services", "General Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        },
+        {
+          "id": "chat-b2",
+          "name": "B Building – Technology Center",
+          "shortName": "B",
+          "lat": 35.7229,
+          "lng": -79.1764,
+          "type": "academic",
+          "description": "Technology classrooms, computer labs, and workforce training facilities.",
+          "departments": ["Information Technology", "Workforce Development"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        },
+        {
+          "id": "chat-b3",
+          "name": "C Building – Trades Center",
+          "shortName": "C",
+          "lat": 35.7240,
+          "lng": -79.1762,
+          "type": "trades",
+          "description": "Trades and technical programs including carpentry and electrical.",
+          "departments": ["Carpentry", "Electrical", "Construction Trades"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "chat-lib",
+          "name": "Library / Media Center",
+          "shortName": "LIB",
+          "lat": 35.7236,
+          "lng": -79.1778,
+          "type": "library",
+          "description": "Library, media resources, and academic support services.",
+          "departments": ["Library", "Academic Support"],
+          "accessibility": true,
+          "hours": "Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "harnett",
+      "name": "Harnett Campus",
+      "address": "1075 East Cornelius Harnett Boulevard, Lillington, NC 27546",
+      "phone": "(910) 814-8888",
+      "lat": 35.3979,
+      "lng": -78.8143,
+      "zoom": 17,
+      "color": "#007A33",
+      "description": "The Harnett County campus in Lillington, NC, providing academic and workforce training to the Harnett County community.",
+      "parkingLots": [
+        { "id": "harn-p1", "name": "Main Parking Lot", "lat": 35.3984, "lng": -78.8148 },
+        { "id": "harn-p2", "name": "East Lot", "lat": 35.3975, "lng": -78.8132 }
+      ],
+      "buildings": [
+        {
+          "id": "harn-b1",
+          "name": "Main Building",
+          "shortName": "MAIN",
+          "lat": 35.3980,
+          "lng": -78.8144,
+          "type": "academic",
+          "description": "Administrative offices, classrooms, computer labs, and student services for the Harnett Campus.",
+          "departments": ["Administration", "Student Services", "General Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        },
+        {
+          "id": "harn-b2",
+          "name": "Workforce Development Center",
+          "shortName": "WDC",
+          "lat": 35.3975,
+          "lng": -78.8138,
+          "type": "academic",
+          "description": "Workforce development, continuing education, and industry training programs.",
+          "departments": ["Workforce Development", "Continuing Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        },
+        {
+          "id": "harn-b3",
+          "name": "Allied Health Building",
+          "shortName": "AHB",
+          "lat": 35.3985,
+          "lng": -78.8135,
+          "type": "academic",
+          "description": "Nursing, medical assisting, and allied health programs.",
+          "departments": ["Nursing", "Medical Assisting", "Allied Health"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "harn-lib",
+          "name": "Library",
+          "shortName": "LIB",
+          "lat": 35.3982,
+          "lng": -78.8150,
+          "type": "library",
+          "description": "Library, computer access, and academic support.",
+          "departments": ["Library", "Academic Support"],
+          "accessibility": true,
+          "hours": "Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "siler-city",
+      "name": "Siler City Center",
+      "address": "P.O. Box 1353, Siler City, NC 27344",
+      "phone": "(919) 663-4060",
+      "lat": 35.7248,
+      "lng": -79.4644,
+      "zoom": 17,
+      "color": "#FF6B00",
+      "description": "The Siler City Center serves western Chatham County with continuing education and select curriculum programs.",
+      "parkingLots": [
+        { "id": "sc-p1", "name": "Main Parking Lot", "lat": 35.7252, "lng": -79.4648 }
+      ],
+      "buildings": [
+        {
+          "id": "sc-b1",
+          "name": "Siler City Center Main Building",
+          "shortName": "MAIN",
+          "lat": 35.7250,
+          "lng": -79.4645,
+          "type": "academic",
+          "description": "Classrooms, computer labs, and student support services for the Siler City area.",
+          "departments": ["General Education", "Continuing Education", "Student Services"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
+    }
+  ]
+}

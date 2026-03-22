@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!--
+    viewport meta is REQUIRED by Google Maps Platform Terms of Service
+    for mobile-optimised map pages (Maps JS API v3 guidelines §2.1).
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Interactive campus map for Central Carolina Community College (CCCC).
+                 Search buildings, get directions, and navigate all four CCCC campuses." />
+
+  <!-- Open Graph (used by Google when indexing map pages) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="CCCC Campus Map" />
+  <meta property="og:description" content="Find buildings, get directions, and explore all CCCC campuses." />
+  <meta property="og:url"         content="https://jeffreylebowsk1.github.io/CCCCgmap/" />
+
+  <title>CCCC Campus Map – Central Carolina Community College</title>
+
+  <!--
+    Schema.org JSON-LD structured data.
+    Declaring CollegeOrUniversity with hasMap lets Google associate this
+    page with the institution's Knowledge Graph entry, which is part of
+    the Google Maps Platform integration review checklist.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollegeOrUniversity",
+    "name": "Central Carolina Community College",
+    "alternateName": "CCCC",
+    "url": "https://www.cccc.edu",
+    "telephone": "+19197755401",
+    "hasMap": "https://jeffreylebowsk1.github.io/CCCCgmap/",
+    "logo": "https://www.cccc.edu/images/logo.png",
+    "sameAs": [
+      "https://www.cccc.edu",
+      "https://www.facebook.com/ccccedu",
+      "https://twitter.com/CCCCedu"
+    ],
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Lee County Campus",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1105 Kelly Drive",
+          "addressLocality": "Sanford",
+          "addressRegion": "NC",
+          "postalCode": "27330",
+          "addressCountry": "US"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 35.4796, "longitude": -79.1894 }
+      },
+      {
+        "@type": "Place",
+        "name": "Chatham Campus",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "764 West Street",
+          "addressLocality": "Pittsboro",
+          "addressRegion": "NC",
+          "postalCode": "27312",
+          "addressCountry": "US"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 35.7233, "longitude": -79.1770 }
+      },
+      {
+        "@type": "Place",
+        "name": "Harnett Campus",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1075 East Cornelius Harnett Boulevard",
+          "addressLocality": "Lillington",
+          "addressRegion": "NC",
+          "postalCode": "27546",
+          "addressCountry": "US"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 35.3979, "longitude": -78.8143 }
+      },
+      {
+        "@type": "Place",
+        "name": "Siler City Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Siler City",
+          "addressRegion": "NC",
+          "postalCode": "27344",
+          "addressCountry": "US"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 35.7248, "longitude": -79.4644 }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- ================================================================
+       HEADER
+       ================================================================ -->
+  <header id="header" role="banner">
+    <a class="logo-wrap" href="https://www.cccc.edu" target="_blank"
+       rel="noopener noreferrer" aria-label="Central Carolina Community College website">
+      <div class="logo-text">
+        <strong>CCCC</strong>
+        <span>Central Carolina Community College</span>
+      </div>
+    </a>
+
+    <div class="header-sep" aria-hidden="true"></div>
+    <span class="header-title">Campus Map</span>
+
+    <!-- Search bar – powered by Google Places Autocomplete -->
+    <div id="search-wrap" role="search">
+      <label for="search-input" class="visually-hidden">
+        Search buildings, departments, or addresses
+      </label>
+      <input id="search-input"
+             type="search"
+             autocomplete="off"
+             placeholder="Search buildings, departments…"
+             aria-label="Search buildings, departments, or addresses"
+             aria-autocomplete="list"
+             aria-controls="search-results"
+             aria-expanded="false" />
+      <button id="search-clear" aria-label="Clear search" title="Clear search">✕</button>
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       MAIN LAYOUT
+       ================================================================ -->
+  <div id="app">
+
+    <!-- ---- Sidebar ---- -->
+    <nav id="sidebar" aria-label="Campus navigation">
+
+      <div id="sidebar-header">
+        <h2 id="sidebar-heading">Select Campus</h2>
+      </div>
+
+      <!-- Campus selector tabs -->
+      <div id="campus-tabs" role="tablist" aria-labelledby="sidebar-heading">
+        <!-- Populated by app.js -->
+      </div>
+
+      <!-- Building type filter chips -->
+      <div id="filter-bar" role="group" aria-label="Filter buildings by type">
+        <!-- Populated by app.js -->
+      </div>
+
+      <!-- Building list -->
+      <ul id="building-list"
+          role="listbox"
+          aria-label="Buildings on selected campus"
+          aria-live="polite">
+        <!-- Populated by app.js -->
+      </ul>
+
+      <!-- Campus summary footer -->
+      <div id="campus-info" aria-live="polite">
+        <!-- Populated by app.js -->
+      </div>
+
+    </nav><!-- /sidebar -->
+
+    <!-- ---- Map pane ---- -->
+    <main id="map" aria-label="Campus map">
+
+      <!-- Loading overlay shown until Google Maps is ready -->
+      <div id="map-loading" aria-live="polite" aria-busy="true">
+        <div class="spinner" role="status" aria-label="Loading map…"></div>
+        <p>Loading campus map…</p>
+      </div>
+
+      <!--
+        Map container.
+        Google Maps Platform requires this element to have explicit
+        width/height (handled in CSS). The `aria-label` is required
+        for screen-reader compliance per Maps JS API accessibility guide.
+      -->
+      <div id="map-container"
+           aria-label="Google Map showing CCCC campuses"
+           role="application">
+      </div>
+
+      <!-- Directions panel rendered by DirectionsRenderer -->
+      <div id="directions-panel"
+           aria-label="Turn-by-turn directions"
+           aria-live="polite"
+           hidden>
+        <button id="directions-close" aria-label="Close directions">✕ Close directions</button>
+        <div id="directions-steps"></div>
+      </div>
+
+      <!-- Map overlay toolbar -->
+      <div id="map-toolbar" role="toolbar" aria-label="Map tools">
+        <button id="btn-all-campuses" class="map-btn"
+                aria-label="Zoom out to see all CCCC campuses">
+          🗺 All Campuses
+        </button>
+        <button id="btn-clear-directions" class="map-btn" hidden
+                aria-label="Clear current directions">
+          ✕ Clear Directions
+        </button>
+      </div>
+
+      <!-- Map legend -->
+      <div id="legend" aria-label="Map legend">
+        <h4>Building Types</h4>
+        <!-- Populated by app.js -->
+      </div>
+
+    </main><!-- /map -->
+
+  </div><!-- /app -->
+
+  <!--
+    API-key setup notice – shown when the placeholder key has not been replaced.
+    Dismissed by app.js once a real key is detected.
+  -->
+  <div id="api-key-banner" role="alert" hidden>
+    <strong>⚠ Configuration required:</strong>
+    <span>
+      Replace <code>YOUR_GOOGLE_MAPS_API_KEY</code> and <code>YOUR_MAP_ID</code>
+      in <code>js/app.js</code> with credentials from the
+      <a href="https://console.cloud.google.com/google/maps-apis/overview"
+         target="_blank" rel="noopener noreferrer">Google Cloud Console</a>.
+      See <code>README.md</code> for full setup instructions.
+    </span>
+    <button id="banner-dismiss" aria-label="Dismiss notice">Dismiss</button>
+  </div>
+
+  <!-- App logic (loaded before Maps bootstrap so CONFIG is available) -->
+  <script src="js/app.js"></script>
+
+  <!--
+    Google Maps Platform – inline bootstrap loader (recommended pattern).
+    Source: https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+    This snippet avoids a render-blocking <script> while still honouring
+    any Content-Security-Policy nonce set on the page.
+
+    IMPORTANT: The bootstrap is called from app.js (initMapsBootstrap())
+    after CONFIG has been read, so that the API key is injected at runtime
+    rather than hard-coded here.
+  -->
+</body>
+</html>

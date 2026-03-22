@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  CCCC Campus Map – KML 2.2
+  Central Carolina Community College
+
+  USAGE – Google My Maps submission:
+  1. Go to https://www.google.com/maps/d/
+  2. Click "Create a new map" → "Import"
+  3. Upload this file (campuses.kml).
+  4. Review, then use "Share" → "Publish to web".
+  5. For official Google Maps listing, submit via
+     Google Maps Connect: https://maps.google.com/maps/user-msft-connect
+
+  USAGE – Google Maps Platform (KML Layer):
+  Host this file at a public HTTPS URL, then in your JavaScript:
+    new google.maps.KmlLayer({
+      url: 'https://yourdomain.com/campuses.kml',
+      map: map,
+      preserveViewport: false,
+    });
+-->
+<kml xmlns="http://www.opengis.net/kml/2.2"
+     xmlns:gx="http://www.google.com/kml/ext/2.2"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <Document>
+    <name>Central Carolina Community College – Campus Map</name>
+    <description><![CDATA[
+      Interactive campus map for Central Carolina Community College (CCCC).
+      Includes building locations, departments, hours, and accessibility
+      information for all four CCCC campuses in North Carolina.
+      Website: https://www.cccc.edu
+    ]]></description>
+
+    <atom:author>
+      <atom:name>Central Carolina Community College</atom:name>
+    </atom:author>
+    <atom:link href="https://www.cccc.edu" />
+
+    <!-- ============================================================
+         SHARED SCHEMA
+         ExtendedData schema lets Google My Maps and third-party KML
+         consumers (e.g., ArcGIS, QGIS) read typed attributes.
+         ============================================================ -->
+    <Schema name="CCCCBuilding" id="CCCCBuilding">
+      <SimpleField type="string"  name="buildingCode">
+        <displayName>Building Code</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="buildingType">
+        <displayName>Building Type</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="campus">
+        <displayName>Campus</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="address">
+        <displayName>Address</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="phone">
+        <displayName>Phone</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="hours">
+        <displayName>Hours</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="departments">
+        <displayName>Departments / Services</displayName>
+      </SimpleField>
+      <SimpleField type="bool"    name="accessible">
+        <displayName>Wheelchair Accessible</displayName>
+      </SimpleField>
+    </Schema>
+
+    <Schema name="CCCCParking" id="CCCCParking">
+      <SimpleField type="string"  name="campus">
+        <displayName>Campus</displayName>
+      </SimpleField>
+      <SimpleField type="string"  name="lotName">
+        <displayName>Lot Name</displayName>
+      </SimpleField>
+    </Schema>
+
+    <!-- ============================================================
+         SHARED STYLES
+         One StyleMap per building type; each maps normal/highlight
+         states – required by the KML 2.2 spec for proper rendering
+         in Google Earth and Google My Maps.
+         ============================================================ -->
+
+    <!-- Academic (blue) -->
+    <Style id="academic-normal">
+      <IconStyle>
+        <color>ff870030</color><!-- AABBGGRR – blue #003087 -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="academic-highlight">
+      <IconStyle>
+        <color>ff870030</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-academic">
+      <Pair><key>normal</key>   <styleUrl>#academic-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#academic-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Services (teal) -->
+    <Style id="services-normal">
+      <IconStyle>
+        <color>ffcc7700</color><!-- teal #0077CC -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/ltblu-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="services-highlight">
+      <IconStyle>
+        <color>ffcc7700</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/ltblu-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-services">
+      <Pair><key>normal</key>   <styleUrl>#services-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#services-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Library (purple) -->
+    <Style id="library-normal">
+      <IconStyle>
+        <color>ff8e2d5b</color><!-- purple #5B2D8E -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/purple-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="library-highlight">
+      <IconStyle>
+        <color>ff8e2d5b</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/purple-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-library">
+      <Pair><key>normal</key>   <styleUrl>#library-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#library-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Trades (brown) -->
+    <Style id="trades-normal">
+      <IconStyle>
+        <color>ff10407c</color><!-- brown #7C4010 -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="trades-highlight">
+      <IconStyle>
+        <color>ff10407c</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-trades">
+      <Pair><key>normal</key>   <styleUrl>#trades-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#trades-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Recreation (green) -->
+    <Style id="recreation-normal">
+      <IconStyle>
+        <color>ff337a00</color><!-- green #007A33 -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="recreation-highlight">
+      <IconStyle>
+        <color>ff337a00</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-recreation">
+      <Pair><key>normal</key>   <styleUrl>#recreation-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#recreation-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Event (red) -->
+    <Style id="event-normal">
+      <IconStyle>
+        <color>ff2e10c8</color><!-- red #C8102E -->
+        <scale>1.1</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="event-highlight">
+      <IconStyle>
+        <color>ff2e10c8</color>
+        <scale>1.3</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.9</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-event">
+      <Pair><key>normal</key>   <styleUrl>#event-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#event-highlight</styleUrl></Pair>
+    </StyleMap>
+
+    <!-- Parking (grey) -->
+    <Style id="parking-normal">
+      <IconStyle>
+        <color>ff555555</color>
+        <scale>0.85</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0</scale></LabelStyle>
+    </Style>
+    <Style id="parking-highlight">
+      <IconStyle>
+        <color>ff555555</color>
+        <scale>1.0</scale>
+        <Icon><href>https://maps.google.com/mapfiles/kml/paddle/wht-blank.png</href></Icon>
+        <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <StyleMap id="style-parking">
+      <Pair><key>normal</key>   <styleUrl>#parking-normal</styleUrl></Pair>
+      <Pair><key>highlight</key><styleUrl>#parking-highlight</styleUrl></Pair>
+    </StyleMap>
+
+
+    <!-- ============================================================
+         LEE COUNTY CAMPUS
+         ============================================================ -->
+    <Folder>
+      <name>Lee County Campus – Sanford, NC</name>
+      <description><![CDATA[
+        1105 Kelly Drive, Sanford, NC 27330<br/>
+        Phone: (919) 775-5401<br/>
+        <a href="https://www.cccc.edu/campuses/lee/">Campus Website</a>
+      ]]></description>
+      <open>1</open>
+
+      <Placemark>
+        <name>Cameron Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> CAM<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Administrative offices, admissions, financial aid,
+          and general education classrooms.<br/>
+          <b>Departments:</b> Administration, Admissions, Financial Aid, Business Office<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4801,-79.1893&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">CAM</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Administration; Admissions; Financial Aid; Business Office</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1893,35.4801,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Dennis A. Wicker Civic &amp; Conference Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> DWACC<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Event Venue<br/>
+          <b>Description:</b> Civic and conference center hosting college events,
+          community programs, and large gatherings.<br/>
+          <b>Departments:</b> Event Services, Community Programs<br/>
+          <b>Hours:</b> Varies by event<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4793,-79.1888&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-event</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">DWACC</SimpleData>
+            <SimpleData name="buildingType">event</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Varies by event</SimpleData>
+            <SimpleData name="departments">Event Services; Community Programs</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1888,35.4793,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Chavis Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> CHA<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Science laboratories, nursing simulation labs,
+          and health sciences classrooms.<br/>
+          <b>Departments:</b> Nursing, Health Sciences, Biology, Chemistry<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4806,-79.1897&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">CHA</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Nursing; Health Sciences; Biology; Chemistry</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1897,35.4806,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Horton Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> HOR<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Technology programs, computer labs, and information
+          technology classrooms.<br/>
+          <b>Departments:</b> Information Technology, Computer Science, Electronics<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4797,-79.1905&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">HOR</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Information Technology; Computer Science; Electronics</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1905,35.4797,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Shank Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> SHA<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Workforce development programs, culinary arts,
+          and continuing education.<br/>
+          <b>Departments:</b> Workforce Development, Culinary Arts, Continuing Education<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4808,-79.1885&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">SHA</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Workforce Development; Culinary Arts; Continuing Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1885,35.4808,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Student Services Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> SSC<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Student services, counseling, career center,
+          disability services, and testing center.<br/>
+          <b>Departments:</b> Counseling, Career Services, Disability Services, Testing Center<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4804,-79.1901&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">SSC</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Counseling; Career Services; Disability Services; Testing Center</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1901,35.4804,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Library / Learning Resource Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> LRC<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Library<br/>
+          <b>Description:</b> Library collections, computer labs, tutoring center,
+          and study spaces.<br/>
+          <b>Departments:</b> Library, Tutoring Center, Academic Support<br/>
+          <b>Hours:</b> Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4800,-79.1887&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-library</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">LRC</SimpleData>
+            <SimpleData name="buildingType">library</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Library; Tutoring Center; Academic Support</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1887,35.4800,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Trades &amp; Industrial Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> TIB<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Automotive, welding, HVAC, electrical, and construction
+          trades programs.<br/>
+          <b>Departments:</b> Automotive, Welding, HVAC, Electrical, Construction Trades<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4790,-79.1906&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-trades</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">TIB</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Automotive; Welding; HVAC; Electrical; Construction Trades</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1906,35.4790,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Physical Education / Fitness Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> GYM<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Recreation<br/>
+          <b>Description:</b> Gymnasium, fitness center, and physical education facilities.<br/>
+          <b>Departments:</b> Physical Education<br/>
+          <b>Hours:</b> Mon–Fri 7:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4786,-79.1896&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-recreation</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">GYM</SimpleData>
+            <SimpleData name="buildingType">recreation</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Physical Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1896,35.4786,0</coordinates>
+        </Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Lot A – Main Entrance (Lee County)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="lotName">Lot A – Main Entrance</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1898,35.4802,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Lot B – East Side (Lee County)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="lotName">Lot B – East Side</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1880,35.4790,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Lot C – West Side (Lee County)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="lotName">Lot C – West Side</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1915,35.4799,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Lee County -->
+
+
+    <!-- ============================================================
+         CHATHAM CAMPUS
+         ============================================================ -->
+    <Folder>
+      <name>Chatham Campus – Pittsboro, NC</name>
+      <description><![CDATA[
+        764 West Street, Pittsboro, NC 27312<br/>
+        Phone: (919) 542-6495<br/>
+        <a href="https://www.cccc.edu/campuses/chatham/">Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>A Building – Main Building (Chatham)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> A<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Administrative offices, classrooms, computer labs,
+          and student services for the Chatham Campus.<br/>
+          <b>Departments:</b> Administration, Student Services, General Education<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7234,-79.1771&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">A</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Administration; Student Services; General Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1771,35.7234,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>B Building – Technology Center (Chatham)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> B<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Technology classrooms, computer labs, and workforce
+          training facilities.<br/>
+          <b>Departments:</b> Information Technology, Workforce Development<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7229,-79.1764&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">B</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Information Technology; Workforce Development</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1764,35.7229,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>C Building – Trades Center (Chatham)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> C<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Trades and technical programs including carpentry
+          and electrical.<br/>
+          <b>Departments:</b> Carpentry, Electrical, Construction Trades<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7240,-79.1762&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-trades</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">C</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Carpentry; Electrical; Construction Trades</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1762,35.7240,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Library / Media Center (Chatham)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> LIB<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Library<br/>
+          <b>Description:</b> Library, media resources, and academic support services.<br/>
+          <b>Departments:</b> Library, Academic Support<br/>
+          <b>Hours:</b> Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7236,-79.1778&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-library</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">LIB</SimpleData>
+            <SimpleData name="buildingType">library</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Library; Academic Support</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1778,35.7236,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Chatham)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1775,35.7237,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Chatham -->
+
+
+    <!-- ============================================================
+         HARNETT CAMPUS
+         ============================================================ -->
+    <Folder>
+      <name>Harnett Campus – Lillington, NC</name>
+      <description><![CDATA[
+        1075 East Cornelius Harnett Boulevard, Lillington, NC 27546<br/>
+        Phone: (910) 814-8888<br/>
+        <a href="https://www.cccc.edu/campuses/harnett/">Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Main Building (Harnett)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MAIN<br/>
+          <b>Campus:</b> Harnett Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Administrative offices, classrooms, computer labs,
+          and student services for the Harnett Campus.<br/>
+          <b>Departments:</b> Administration, Student Services, General Education<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3980,-78.8144&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MAIN</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Administration; Student Services; General Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8144,35.3980,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Workforce Development Center (Harnett)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> WDC<br/>
+          <b>Campus:</b> Harnett Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Workforce development, continuing education,
+          and industry training programs.<br/>
+          <b>Departments:</b> Workforce Development, Continuing Education<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3975,-78.8138&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">WDC</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Workforce Development; Continuing Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8138,35.3975,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Allied Health Building (Harnett)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> AHB<br/>
+          <b>Campus:</b> Harnett Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Nursing, medical assisting, and allied health programs.<br/>
+          <b>Departments:</b> Nursing, Medical Assisting, Allied Health<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3985,-78.8135&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">AHB</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Nursing; Medical Assisting; Allied Health</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8135,35.3985,0</coordinates></Point>
+      </Placemark>
+
+      <Placemark>
+        <name>Library (Harnett)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> LIB<br/>
+          <b>Campus:</b> Harnett Campus<br/>
+          <b>Type:</b> Library<br/>
+          <b>Description:</b> Library, computer access, and academic support.<br/>
+          <b>Departments:</b> Library, Academic Support<br/>
+          <b>Hours:</b> Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3982,-78.8150&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-library</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">LIB</SimpleData>
+            <SimpleData name="buildingType">library</SimpleData>
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Library; Academic Support</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8150,35.3982,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Harnett)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8148,35.3984,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Harnett -->
+
+
+    <!-- ============================================================
+         SILER CITY CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Siler City Center – Siler City, NC</name>
+      <description><![CDATA[
+        Siler City, NC 27344<br/>
+        Phone: (919) 663-4060<br/>
+        <a href="https://www.cccc.edu/campuses/chatham/">Chatham Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Siler City Center Main Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MAIN<br/>
+          <b>Campus:</b> Siler City Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Classrooms, computer labs, and student support
+          services for the Siler City area.<br/>
+          <b>Departments:</b> General Education, Continuing Education, Student Services<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7250,-79.4645&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MAIN</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Siler City Center</SimpleData>
+            <SimpleData name="address">Siler City, NC 27344</SimpleData>
+            <SimpleData name="phone">(919) 663-4060</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">General Education; Continuing Education; Student Services</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.4645,35.7250,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Siler City)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Siler City Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.4648,35.7252,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Siler City -->
+
+  </Document>
+</kml>
