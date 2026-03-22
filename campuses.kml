@@ -932,5 +932,464 @@
 
     </Folder><!-- /Siler City -->
 
+
+    <!-- ============================================================
+         CHATHAM HEALTH SCIENCES CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Chatham Health Sciences Center – Pittsboro, NC</name>
+      <description><![CDATA[
+        764 West Street, Pittsboro, NC 27312<br/>
+        Phone: (919) 542-6495<br/>
+        <a href="https://www.cccc.edu/campuses/chatham/">Chatham Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Health Sciences Building (Chatham)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> HS<br/>
+          <b>Campus:</b> Chatham Health Sciences Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Allied health classrooms, nursing simulation labs,
+          and medical assisting programs.<br/>
+          <b>Departments:</b> Nursing, Allied Health, Medical Assisting<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7226,-79.1759&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">HS</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Chatham Health Sciences Center</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Nursing; Allied Health; Medical Assisting</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1759,35.7226,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Chatham Health Sciences)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Chatham Health Sciences Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1762,35.7228,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Chatham Health Sciences -->
+
+
+    <!-- ============================================================
+         HARNETT HEALTH SCIENCES CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Harnett Health Sciences Center – Lillington, NC</name>
+      <description><![CDATA[
+        1075 East Cornelius Harnett Blvd, Lillington, NC 27546<br/>
+        Phone: (910) 814-8888<br/>
+        <a href="https://www.cccc.edu/campuses/harnett/">Harnett Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Health Sciences Building (Harnett)</name>
+        <description><![CDATA[
+          <b>Building Code:</b> HS<br/>
+          <b>Campus:</b> Harnett Health Sciences Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Nursing simulation labs, allied health classrooms,
+          and medical training facilities.<br/>
+          <b>Departments:</b> Nursing, Allied Health, Phlebotomy<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3969,-78.8159&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">HS</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Harnett Health Sciences Center</SimpleData>
+            <SimpleData name="address">1075 East Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Nursing; Allied Health; Phlebotomy</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8159,35.3969,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Harnett Health Sciences)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Harnett Health Sciences Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8162,35.3971,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Harnett Health Sciences -->
+
+
+    <!-- ============================================================
+         WEST HARNETT CENTER
+         ============================================================ -->
+    <Folder>
+      <name>West Harnett Center – Lillington, NC</name>
+      <description><![CDATA[
+        West Harnett, Lillington, NC 27546<br/>
+        Phone: (910) 814-8888<br/>
+        <a href="https://www.cccc.edu/campuses/harnett/">Harnett Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>West Harnett Center Main Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MAIN<br/>
+          <b>Campus:</b> West Harnett Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Classrooms and workforce development facilities
+          serving western Harnett County.<br/>
+          <b>Departments:</b> General Education, Workforce Development, Continuing Education<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3801,-78.8401&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MAIN</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">West Harnett Center</SimpleData>
+            <SimpleData name="address">West Harnett, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">General Education; Workforce Development; Continuing Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8401,35.3801,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (West Harnett)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">West Harnett Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8404,35.3803,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /West Harnett -->
+
+
+    <!-- ============================================================
+         CENTER FOR WORKFORCE INNOVATION
+         ============================================================ -->
+    <Folder>
+      <name>Center for Workforce Innovation – Sanford, NC</name>
+      <description><![CDATA[
+        Sanford, NC 27330<br/>
+        Phone: (919) 775-5401<br/>
+        <a href="https://www.cccc.edu/campuses/lee/">Lee County Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Workforce Innovation Main Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> CWI<br/>
+          <b>Campus:</b> Center for Workforce Innovation<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Corporate training suites, simulation labs, and
+          continuing education classrooms.<br/>
+          <b>Departments:</b> Corporate Training, Workforce Development, Continuing Education, Career Development<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4741,-79.1826&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">CWI</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Center for Workforce Innovation</SimpleData>
+            <SimpleData name="address">Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Corporate Training; Workforce Development; Continuing Education; Career Development</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1826,35.4741,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Center for Workforce Innovation)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Center for Workforce Innovation</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1829,35.4743,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Center for Workforce Innovation -->
+
+
+    <!-- ============================================================
+         DENNIS A. WICKER CIVIC & CONFERENCE CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Dennis A. Wicker Civic &amp; Conference Center – Sanford, NC</name>
+      <description><![CDATA[
+        1801 Nash Street, Sanford, NC 27330<br/>
+        Phone: (919) 774-4000<br/>
+        <a href="https://www.cccc.edu/campuses/lee/">Lee County Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Civic &amp; Conference Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> DWACC<br/>
+          <b>Campus:</b> Dennis A. Wicker Civic &amp; Conference Center<br/>
+          <b>Type:</b> Event Venue<br/>
+          <b>Description:</b> Main conference hall, ballroom, meeting rooms,
+          and catering facilities.<br/>
+          <b>Departments:</b> Event Services, Catering, Community Programs<br/>
+          <b>Hours:</b> Varies by event<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4761,-79.1844&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-event</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">DWACC</SimpleData>
+            <SimpleData name="buildingType">event</SimpleData>
+            <SimpleData name="campus">Dennis A. Wicker Civic &amp; Conference Center</SimpleData>
+            <SimpleData name="address">1801 Nash Street, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 774-4000</SimpleData>
+            <SimpleData name="hours">Varies by event</SimpleData>
+            <SimpleData name="departments">Event Services; Catering; Community Programs</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1844,35.4761,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Dennis A. Wicker)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Dennis A. Wicker Civic &amp; Conference Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1847,35.4763,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Overflow Parking (Dennis A. Wicker)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Dennis A. Wicker Civic &amp; Conference Center</SimpleData>
+            <SimpleData name="lotName">Overflow Parking</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1838,35.4756,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Dennis A. Wicker -->
+
+
+    <!-- ============================================================
+         EMERGENCY SERVICES TRAINING CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Emergency Services Training Center – Harnett County, NC</name>
+      <description><![CDATA[
+        Harnett County, NC 27546<br/>
+        Phone: (910) 814-8888<br/>
+        <a href="https://www.cccc.edu/campuses/harnett/">Harnett Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Emergency Services Training Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> ESTC<br/>
+          <b>Campus:</b> Emergency Services Training Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> EMS labs, fire science training grounds, and
+          law enforcement simulation facilities.<br/>
+          <b>Departments:</b> Emergency Medical Services, Fire Science, Law Enforcement, Basic Law Enforcement Training<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3811,-78.8051&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">ESTC</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Emergency Services Training Center</SimpleData>
+            <SimpleData name="address">Harnett County, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Emergency Medical Services; Fire Science; Law Enforcement; Basic Law Enforcement Training</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8051,35.3811,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Emergency Services Training)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Emergency Services Training Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8054,35.3813,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Emergency Services Training -->
+
+
+    <!-- ============================================================
+         DUNN CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Dunn Center – Dunn, NC</name>
+      <description><![CDATA[
+        Dunn, NC 28334<br/>
+        Phone: (910) 814-8888<br/>
+        <a href="https://www.cccc.edu/campuses/harnett/">Harnett Campus Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Dunn Center Main Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MAIN<br/>
+          <b>Campus:</b> Dunn Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Classrooms, computer labs, and student support
+          services for the Dunn community.<br/>
+          <b>Departments:</b> General Education, Continuing Education, Student Services<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3134,-78.6191&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MAIN</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Dunn Center</SimpleData>
+            <SimpleData name="address">Dunn, NC 28334</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">General Education; Continuing Education; Student Services</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.6191,35.3134,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Dunn Center)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Dunn Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.6194,35.3136,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Dunn Center -->
+
+
+    <!-- ============================================================
+         MOORE CENTER
+         ============================================================ -->
+    <Folder>
+      <name>Moore Center – Carthage, NC</name>
+      <description><![CDATA[
+        Carthage, NC 28327<br/>
+        Phone: (910) 947-3931<br/>
+        <a href="https://www.cccc.edu">CCCC Website</a>
+      ]]></description>
+
+      <Placemark>
+        <name>Moore Center Main Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MAIN<br/>
+          <b>Campus:</b> Moore Center<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Classrooms, computer labs, and continuing education
+          facilities for Moore County.<br/>
+          <b>Departments:</b> General Education, Continuing Education, Workforce Development<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3502,-79.4129&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MAIN</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Moore Center</SimpleData>
+            <SimpleData name="address">Carthage, NC 28327</SimpleData>
+            <SimpleData name="phone">(910) 947-3931</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">General Education; Continuing Education; Workforce Development</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.4129,35.3502,0</coordinates></Point>
+      </Placemark>
+
+      <!-- Parking -->
+      <Placemark>
+        <name>Main Parking Lot (Moore Center)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Moore Center</SimpleData>
+            <SimpleData name="lotName">Main Parking Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.4132,35.3504,0</coordinates></Point>
+      </Placemark>
+
+    </Folder><!-- /Moore Center -->
+
   </Document>
 </kml>

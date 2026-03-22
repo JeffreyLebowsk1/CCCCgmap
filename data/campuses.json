@@ -294,6 +294,239 @@
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
       ]
+    },
+    {
+      "id": "chatham-health-sciences",
+      "name": "Chatham Health Sciences Center",
+      "address": "764 West Street, Pittsboro, NC 27312",
+      "phone": "(919) 542-6495",
+      "lat": 35.7225,
+      "lng": -79.1758,
+      "zoom": 17,
+      "color": "#5B2D8E",
+      "description": "The Chatham Health Sciences Center provides allied health and nursing programs for Chatham County students.",
+      "campusPdf": "data/pdfs/chatham-health-sciences-campus-map.pdf",
+      "parkingLots": [
+        { "id": "chs-p1", "name": "Main Parking Lot", "lat": 35.7228, "lng": -79.1762 }
+      ],
+      "buildings": [
+        {
+          "id": "chs-b1",
+          "name": "Health Sciences Building",
+          "shortName": "HS",
+          "lat": 35.7226,
+          "lng": -79.1759,
+          "type": "academic",
+          "description": "Allied health classrooms, nursing simulation labs, and medical assisting programs.",
+          "departments": ["Nursing", "Allied Health", "Medical Assisting"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "harnett-health-sciences",
+      "name": "Harnett Health Sciences Center",
+      "address": "1075 East Cornelius Harnett Blvd, Lillington, NC 27546",
+      "phone": "(910) 814-8888",
+      "lat": 35.3968,
+      "lng": -78.8158,
+      "zoom": 17,
+      "color": "#0077CC",
+      "description": "The Harnett Health Sciences Center offers allied health, nursing, and medical programs for Harnett County.",
+      "campusPdf": "data/pdfs/harnett-health-sciences-campus-map.pdf",
+      "parkingLots": [
+        { "id": "hhs-p1", "name": "Main Parking Lot", "lat": 35.3971, "lng": -78.8162 }
+      ],
+      "buildings": [
+        {
+          "id": "hhs-b1",
+          "name": "Health Sciences Building",
+          "shortName": "HS",
+          "lat": 35.3969,
+          "lng": -78.8159,
+          "type": "academic",
+          "description": "Nursing simulation labs, allied health classrooms, and medical training facilities.",
+          "departments": ["Nursing", "Allied Health", "Phlebotomy"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "west-harnett",
+      "name": "West Harnett Center",
+      "address": "West Harnett, Lillington, NC 27546",
+      "phone": "(910) 814-8888",
+      "lat": 35.3800,
+      "lng": -78.8400,
+      "zoom": 16,
+      "color": "#7C4010",
+      "description": "The West Harnett Center brings CCCC programs closer to residents in western Harnett County.",
+      "campusPdf": "data/pdfs/west-harnett-campus-map.pdf",
+      "parkingLots": [
+        { "id": "wh-p1", "name": "Main Parking Lot", "lat": 35.3803, "lng": -78.8404 }
+      ],
+      "buildings": [
+        {
+          "id": "wh-b1",
+          "name": "West Harnett Center Main Building",
+          "shortName": "MAIN",
+          "lat": 35.3801,
+          "lng": -78.8401,
+          "type": "academic",
+          "description": "Classrooms and workforce development facilities serving western Harnett County.",
+          "departments": ["General Education", "Workforce Development", "Continuing Education"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "workforce-innovation",
+      "name": "Center for Workforce Innovation",
+      "address": "Sanford, NC 27330",
+      "phone": "(919) 775-5401",
+      "lat": 35.4740,
+      "lng": -79.1825,
+      "zoom": 17,
+      "color": "#F0AB00",
+      "description": "The Center for Workforce Innovation provides industry-driven training, corporate education, and career development programs.",
+      "campusPdf": "data/pdfs/center-for-workforce-innovation-campus-map.pdf",
+      "parkingLots": [
+        { "id": "cwi-p1", "name": "Main Parking Lot", "lat": 35.4743, "lng": -79.1829 }
+      ],
+      "buildings": [
+        {
+          "id": "cwi-b1",
+          "name": "Workforce Innovation Main Building",
+          "shortName": "CWI",
+          "lat": 35.4741,
+          "lng": -79.1826,
+          "type": "academic",
+          "description": "Corporate training suites, simulation labs, and continuing education classrooms.",
+          "departments": ["Corporate Training", "Workforce Development", "Continuing Education", "Career Development"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "dennis-wicker",
+      "name": "Dennis A. Wicker Civic & Conference Center",
+      "address": "1801 Nash Street, Sanford, NC 27330",
+      "phone": "(919) 774-4000",
+      "lat": 35.4760,
+      "lng": -79.1843,
+      "zoom": 17,
+      "color": "#C8102E",
+      "description": "A premier civic and conference venue in Sanford, NC hosting college events, community programs, and large gatherings.",
+      "campusPdf": "data/pdfs/dennis-a-wicker-civic-conference-campus-map.pdf",
+      "parkingLots": [
+        { "id": "dw-p1", "name": "Main Parking Lot", "lat": 35.4763, "lng": -79.1847 },
+        { "id": "dw-p2", "name": "Overflow Parking", "lat": 35.4756, "lng": -79.1838 }
+      ],
+      "buildings": [
+        {
+          "id": "dw-b1",
+          "name": "Civic & Conference Center",
+          "shortName": "DWACC",
+          "lat": 35.4761,
+          "lng": -79.1844,
+          "type": "event",
+          "description": "Main conference hall, ballroom, meeting rooms, and catering facilities.",
+          "departments": ["Event Services", "Catering", "Community Programs"],
+          "accessibility": true,
+          "hours": "Varies by event"
+        }
+      ]
+    },
+    {
+      "id": "emergency-services-training",
+      "name": "Emergency Services Training Center",
+      "address": "Harnett County, NC 27546",
+      "phone": "(910) 814-8888",
+      "lat": 35.3810,
+      "lng": -78.8050,
+      "zoom": 16,
+      "color": "#CC3300",
+      "description": "Specialized training facility for emergency medical services, fire science, and law enforcement programs.",
+      "campusPdf": "data/pdfs/emergency-services-training-campus-map.pdf",
+      "parkingLots": [
+        { "id": "estc-p1", "name": "Main Parking Lot", "lat": 35.3813, "lng": -78.8054 }
+      ],
+      "buildings": [
+        {
+          "id": "estc-b1",
+          "name": "Emergency Services Training Building",
+          "shortName": "ESTC",
+          "lat": 35.3811,
+          "lng": -78.8051,
+          "type": "academic",
+          "description": "EMS labs, fire science training grounds, and law enforcement simulation facilities.",
+          "departments": ["Emergency Medical Services", "Fire Science", "Law Enforcement", "Basic Law Enforcement Training"],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "dunn",
+      "name": "Dunn Center",
+      "address": "Dunn, NC 28334",
+      "phone": "(910) 814-8888",
+      "lat": 35.3133,
+      "lng": -78.6190,
+      "zoom": 16,
+      "color": "#003087",
+      "description": "The Dunn Center provides curriculum and continuing education programs for residents of the Dunn area of Harnett County.",
+      "campusPdf": "data/pdfs/dunn-campus-map.pdf",
+      "parkingLots": [
+        { "id": "dunn-p1", "name": "Main Parking Lot", "lat": 35.3136, "lng": -78.6194 }
+      ],
+      "buildings": [
+        {
+          "id": "dunn-b1",
+          "name": "Dunn Center Main Building",
+          "shortName": "MAIN",
+          "lat": 35.3134,
+          "lng": -78.6191,
+          "type": "academic",
+          "description": "Classrooms, computer labs, and student support services for the Dunn community.",
+          "departments": ["General Education", "Continuing Education", "Student Services"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
+    },
+    {
+      "id": "moore",
+      "name": "Moore Center",
+      "address": "Carthage, NC 28327",
+      "phone": "(910) 947-3931",
+      "lat": 35.3501,
+      "lng": -79.4128,
+      "zoom": 16,
+      "color": "#007A33",
+      "description": "The Moore Center serves Moore County residents with continuing education, workforce training, and select curriculum programs.",
+      "campusPdf": "data/pdfs/moore-campus-map.pdf",
+      "parkingLots": [
+        { "id": "moore-p1", "name": "Main Parking Lot", "lat": 35.3504, "lng": -79.4132 }
+      ],
+      "buildings": [
+        {
+          "id": "moore-b1",
+          "name": "Moore Center Main Building",
+          "shortName": "MAIN",
+          "lat": 35.3502,
+          "lng": -79.4129,
+          "type": "academic",
+          "description": "Classrooms, computer labs, and continuing education facilities for Moore County.",
+          "departments": ["General Education", "Continuing Education", "Workforce Development"],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+        }
+      ]
     }
   ]
 }
