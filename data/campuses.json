@@ -276,7 +276,7 @@
       "zoom": 17,
       "color": "#FF6B00",
       "description": "The Siler City Center serves western Chatham County with continuing education and select curriculum programs.",
-      "campusPdf": "",
+      "campusPdf": "data/pdfs/siler-city-campus-map.pdf",
       "parkingLots": [
         { "id": "sc-p1", "name": "Main Parking Lot", "lat": 35.7252, "lng": -79.4648 }
       ],
