@@ -409,6 +409,25 @@ html, body {
 
 #campus-info .ci-nav-btn:hover { background: #002070; }
 
+#campus-info .ci-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 7px 14px;
+  background: #f0f0f0;
+  color: #1a1a1a;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+#campus-info .ci-pdf-btn:hover { background: #e0e0e0; }
+
 /* --- Map -------------------------------------------------- */
 #map {
   flex: 1;

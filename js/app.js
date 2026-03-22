@@ -422,6 +422,16 @@ function renderCampusInfo(campus, container) {
   const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${
     encodeURIComponent(campus.address)}&travelmode=driving`;
 
+  const pdfLink = campus.campusPdf
+    ? `<a class="ci-pdf-btn"
+         href="${escapeHtml(campus.campusPdf)}"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Open campus map PDF for ${escapeHtml(campus.name)}">
+        📄 Campus Map (PDF)
+       </a>`
+    : '';
+
   container.innerHTML = `
     <div class="ci-name">${escapeHtml(campus.name)}</div>
     <div class="ci-address">${escapeHtml(campus.address)}</div>
@@ -438,6 +448,7 @@ function renderCampusInfo(campus, container) {
        aria-label="Get Google Maps directions to ${campus.name}">
       🧭 Get Directions
     </a>
+    ${pdfLink}
   `;
 }
 
