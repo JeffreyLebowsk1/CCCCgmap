@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-        content="Progress overview of the CCCC Campus Map project – all four campuses at a glance." />
+        content="Progress overview of the CCCC Campus Map project – all twelve campuses and centers at a glance." />
   <title>CCCC Campus Map – Progress Overview</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -81,11 +81,17 @@
     /* Campus grid */
     .campus-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
+    }
+
+    @media (max-width: 900px) {
+      .campus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 700px) {
@@ -293,11 +299,11 @@
 
     <div class="progress-hero">
       <div class="completion-badge" role="status">
-        ✅ All 4 campuses added
+        ✅ All 12 campuses &amp; centers mapped
       </div>
       <h1>Campus Map – Progress Overview</h1>
       <p>
-        All four Central Carolina Community College campuses have been mapped
+        All twelve Central Carolina Community College campuses and centers have been mapped
         with buildings, parking lots, departments, hours, and navigation support.
       </p>
     </div>
@@ -305,15 +311,15 @@
     <!-- Summary stats -->
     <div class="progress-stats" aria-label="Project summary statistics">
       <div class="stat-item">
-        <div class="stat-number">4</div>
+        <div class="stat-number">12</div>
         <div class="stat-label">Campuses</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">18</div>
+        <div class="stat-number">26</div>
         <div class="stat-label">Buildings</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">8</div>
+        <div class="stat-number">17</div>
         <div class="stat-label">Parking Lots</div>
       </div>
       <div class="stat-item">
@@ -321,7 +327,7 @@
         <div class="stat-label">Building Types</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">3</div>
+        <div class="stat-number">12</div>
         <div class="stat-label">PDF Maps</div>
       </div>
     </div>
@@ -534,6 +540,429 @@
                aria-label="View Siler City Center in interactive map">
               🗺 View on Map
             </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/siler-city-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Siler City Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 5. Chatham Health Sciences Center ──────────── -->
+      <article class="campus-card" role="listitem" aria-label="Chatham Health Sciences Center">
+        <div class="card-header" style="background:#5B2D8E">
+          <div class="card-campus-number" aria-hidden="true">5</div>
+          <div class="card-campus-name">Chatham Health Sciences Center</div>
+          <span class="card-campus-tag">Pittsboro, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.7225,-79.1758&z=17&output=embed"
+          title="Chatham Health Sciences Center map – Pittsboro, NC"
+          aria-label="Google Map showing Chatham Health Sciences Center in Pittsboro, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            764 West Street, Pittsboro, NC 27312
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9195426495">(919) 542-6495</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Chatham Health Sciences Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#5B2D8E"
+               href="index.html#chatham-health-sciences"
+               aria-label="View Chatham Health Sciences Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/chatham-health-sciences-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Chatham Health Sciences Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 6. Harnett Health Sciences Center ──────────── -->
+      <article class="campus-card" role="listitem" aria-label="Harnett Health Sciences Center">
+        <div class="card-header" style="background:#0077CC">
+          <div class="card-campus-number" aria-hidden="true">6</div>
+          <div class="card-campus-name">Harnett Health Sciences Center</div>
+          <span class="card-campus-tag">Lillington, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3968,-78.8158&z=17&output=embed"
+          title="Harnett Health Sciences Center map – Lillington, NC"
+          aria-label="Google Map showing Harnett Health Sciences Center in Lillington, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            1075 East Cornelius Harnett Blvd, Lillington, NC 27546
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9108148888">(910) 814-8888</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Harnett Health Sciences Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#0077CC"
+               href="index.html#harnett-health-sciences"
+               aria-label="View Harnett Health Sciences Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/harnett-health-sciences-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Harnett Health Sciences Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 7. West Harnett Center ──────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="West Harnett Center">
+        <div class="card-header" style="background:#7C4010">
+          <div class="card-campus-number" aria-hidden="true">7</div>
+          <div class="card-campus-name">West Harnett Center</div>
+          <span class="card-campus-tag">Lillington, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3800,-78.8400&z=16&output=embed"
+          title="West Harnett Center map – Lillington, NC"
+          aria-label="Google Map showing West Harnett Center in Lillington, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            West Harnett, Lillington, NC 27546
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9108148888">(910) 814-8888</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at West Harnett Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#7C4010"
+               href="index.html#west-harnett"
+               aria-label="View West Harnett Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/west-harnett-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open West Harnett Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 8. Center for Workforce Innovation ─────────── -->
+      <article class="campus-card" role="listitem" aria-label="Center for Workforce Innovation">
+        <div class="card-header" style="background:#F0AB00">
+          <div class="card-campus-number" aria-hidden="true">8</div>
+          <div class="card-campus-name">Center for Workforce Innovation</div>
+          <span class="card-campus-tag">Sanford, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.4740,-79.1825&z=17&output=embed"
+          title="Center for Workforce Innovation map – Sanford, NC"
+          aria-label="Google Map showing Center for Workforce Innovation in Sanford, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Sanford, NC 27330
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9197755401">(919) 775-5401</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Center for Workforce Innovation">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#F0AB00;color:#333"
+               href="index.html#workforce-innovation"
+               aria-label="View Center for Workforce Innovation in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/center-for-workforce-innovation-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Center for Workforce Innovation PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 9. Dennis A. Wicker Civic & Conference Center ─ -->
+      <article class="campus-card" role="listitem" aria-label="Dennis A. Wicker Civic and Conference Center">
+        <div class="card-header" style="background:#C8102E">
+          <div class="card-campus-number" aria-hidden="true">9</div>
+          <div class="card-campus-name">Dennis A. Wicker Civic &amp; Conference Center</div>
+          <span class="card-campus-tag">Sanford, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.4760,-79.1843&z=17&output=embed"
+          title="Dennis A. Wicker Civic and Conference Center map – Sanford, NC"
+          aria-label="Google Map showing Dennis A. Wicker Civic and Conference Center in Sanford, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            1801 Nash Street, Sanford, NC 27330
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9197744000">(919) 774-4000</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 2 parking lots
+          </div>
+          <div class="card-types" aria-label="Building types at Dennis A. Wicker Civic and Conference Center">
+            <span class="type-chip">🎭 Events ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#C8102E"
+               href="index.html#dennis-wicker"
+               aria-label="View Dennis A. Wicker Civic and Conference Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/dennis-a-wicker-civic-conference-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Dennis A. Wicker Civic and Conference Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 10. Emergency Services Training Center ──────── -->
+      <article class="campus-card" role="listitem" aria-label="Emergency Services Training Center">
+        <div class="card-header" style="background:#CC3300">
+          <div class="card-campus-number" aria-hidden="true">10</div>
+          <div class="card-campus-name">Emergency Services Training Center</div>
+          <span class="card-campus-tag">Harnett County, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3810,-78.8050&z=16&output=embed"
+          title="Emergency Services Training Center map – Harnett County, NC"
+          aria-label="Google Map showing Emergency Services Training Center in Harnett County, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Harnett County, NC 27546
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9108148888">(910) 814-8888</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Emergency Services Training Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#CC3300"
+               href="index.html#emergency-services-training"
+               aria-label="View Emergency Services Training Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/emergency-services-training-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Emergency Services Training Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 11. Dunn Center ─────────────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Dunn Center">
+        <div class="card-header" style="background:#003087">
+          <div class="card-campus-number" aria-hidden="true">11</div>
+          <div class="card-campus-name">Dunn Center</div>
+          <span class="card-campus-tag">Dunn, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3133,-78.6190&z=16&output=embed"
+          title="Dunn Center map – Dunn, NC"
+          aria-label="Google Map showing Dunn Center in Dunn, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Dunn, NC 28334
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9108148888">(910) 814-8888</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Dunn Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#003087"
+               href="index.html#dunn"
+               aria-label="View Dunn Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/dunn-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Dunn Center PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 12. Moore Center ────────────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Moore Center">
+        <div class="card-header" style="background:#007A33">
+          <div class="card-campus-number" aria-hidden="true">12</div>
+          <div class="card-campus-name">Moore Center</div>
+          <span class="card-campus-tag">Carthage, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3501,-79.4128&z=16&output=embed"
+          title="Moore Center map – Carthage, NC"
+          aria-label="Google Map showing Moore Center in Carthage, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Carthage, NC 28327
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9109473931">(910) 947-3931</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Moore Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#007A33"
+               href="index.html#moore"
+               aria-label="View Moore Center in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/moore-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Moore Center PDF map">
+              📄 PDF Map
+            </a>
           </div>
         </div>
       </article>
@@ -549,7 +978,7 @@
       </h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
-          ✅ All 4 campuses in <code>campuses.json</code>
+          ✅ All 12 campuses &amp; centers in <code>campuses.json</code>
         </div>
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
           ✅ AdvancedMarkerElement + PinElement (non-deprecated)
@@ -564,7 +993,7 @@
           ✅ Google Places Autocomplete search
         </div>
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
-          ✅ Campus PDF map links (3 of 4 ready)
+          ✅ Campus PDF map links (12/12 ready)
         </div>
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
           ✅ OGC KML 2.2 export (<code>campuses.kml</code>)
@@ -579,7 +1008,7 @@
           ✅ Building type filter chips
         </div>
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
-          ✅ Parking lot markers (8 lots total)
+          ✅ Parking lot markers (17 lots total)
         </div>
         <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
           ✅ Street View quick-launch from buildings
