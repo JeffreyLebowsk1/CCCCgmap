@@ -4,12 +4,20 @@ Place campus map PDF files in this directory.
 
 ## File naming convention
 
-| Campus | Expected filename |
+| Campus / Center | Expected filename |
 |---|---|
 | Lee County Campus | `lee-campus-map.pdf` |
 | Chatham Campus | `chatham-campus-map.pdf` |
 | Harnett Campus | `harnett-campus-map.pdf` |
 | Siler City Center | `siler-city-campus-map.pdf` |
+| Chatham Health Sciences Center | `chatham-health-sciences-campus-map.pdf` |
+| Dunn Center | `dunn-campus-map.pdf` |
+| Harnett Health Sciences Center | `harnett-health-sciences-campus-map.pdf` |
+| West Harnett Center | `west-harnett-campus-map.pdf` |
+| Center for Workforce Innovation | `center-for-workforce-innovation-campus-map.pdf` |
+| Dennis A. Wicker Civic & Conference Center | `dennis-a-wicker-civic-conference-campus-map.pdf` |
+| Emergency Services Training Center | `emergency-services-training-campus-map.pdf` |
+| Moore Center | `moore-campus-map.pdf` |
 
 ## How it works
 
