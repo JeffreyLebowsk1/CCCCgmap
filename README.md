@@ -137,7 +137,8 @@ CCCCgmap/
 │                         • Places Autocomplete
 │                         • Custom building search
 └── data/
-    └── campuses.json   Campus and building data (single source of truth)
+    ├── campuses.json   Campus and building data (single source of truth)
+    └── pdfs/           Campus map PDFs (one per campus – see data/pdfs/README.md)
 ```
 
 ---
@@ -171,6 +172,39 @@ manually following the same structure).
 
 To regenerate the KML from JSON automatically, a Node.js generator script can
 be added; open an issue if that would be helpful.
+
+---
+
+## Adding Campus PDF Maps
+
+Campus map PDFs are stored in the **`data/pdfs/`** directory and linked via
+the `campusPdf` field in `data/campuses.json`.
+
+### Steps
+
+1. **Obtain** the campus map PDF (e.g. from the CCCC website or facilities team).
+2. **Rename** it following the convention below and place it in `data/pdfs/`:
+
+   | Campus | Filename |
+   |---|---|
+   | Lee County Campus | `lee-campus-map.pdf` |
+   | Chatham Campus | `chatham-campus-map.pdf` |
+   | Harnett Campus | `harnett-campus-map.pdf` |
+   | Siler City Center | `siler-city-campus-map.pdf` |
+
+3. **Set the path** in `data/campuses.json` for the matching campus:
+
+   ```json
+   "campusPdf": "data/pdfs/lee-campus-map.pdf"
+   ```
+
+4. **Commit and push** (or redeploy to GitHub Pages).
+
+A **📄 Campus Map (PDF)** button will automatically appear in the campus info
+panel at the bottom of the sidebar. Leaving `campusPdf` as `""` hides the
+button until the file is ready.
+
+See `data/pdfs/README.md` for more details.
 
 ---
 

@@ -17,6 +17,7 @@
       "zoom": 17,
       "color": "#003087",
       "description": "The main Lee County campus in Sanford, NC, offering a full range of academic and workforce programs.",
+      "campusPdf": "",
       "parkingLots": [
         { "id": "lee-p1", "name": "Lot A – Main Entrance", "lat": 35.4802, "lng": -79.1898 },
         { "id": "lee-p2", "name": "Lot B – East Side", "lat": 35.4790, "lng": -79.1880 },
@@ -143,6 +144,7 @@
       "zoom": 17,
       "color": "#C8102E",
       "description": "The Chatham County campus in Pittsboro, NC, serving the Chatham County community with academic and workforce programs.",
+      "campusPdf": "",
       "parkingLots": [
         { "id": "chat-p1", "name": "Main Parking Lot", "lat": 35.7237, "lng": -79.1775 },
         { "id": "chat-p2", "name": "South Lot", "lat": 35.7228, "lng": -79.1768 }
@@ -208,6 +210,7 @@
       "zoom": 17,
       "color": "#007A33",
       "description": "The Harnett County campus in Lillington, NC, providing academic and workforce training to the Harnett County community.",
+      "campusPdf": "",
       "parkingLots": [
         { "id": "harn-p1", "name": "Main Parking Lot", "lat": 35.3984, "lng": -78.8148 },
         { "id": "harn-p2", "name": "East Lot", "lat": 35.3975, "lng": -78.8132 }
@@ -273,6 +276,7 @@
       "zoom": 17,
       "color": "#FF6B00",
       "description": "The Siler City Center serves western Chatham County with continuing education and select curriculum programs.",
+      "campusPdf": "",
       "parkingLots": [
         { "id": "sc-p1", "name": "Main Parking Lot", "lat": 35.7252, "lng": -79.4648 }
       ],
