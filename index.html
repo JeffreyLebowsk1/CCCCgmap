@@ -103,6 +103,9 @@
     Using the legacy UMD build so it works without ES module support.
     Version 4.10.38 is patched against CVE-2024-4367 (arbitrary JS execution).
     Source: https://github.com/mozilla/pdf.js
+    NOTE: Add an `integrity="sha384-<hash>"` SRI attribute once the hash for
+    this specific build is available from https://www.jsdelivr.com/package/npm/pdfjs-dist
+    to protect against CDN compromise.
   -->
   <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/legacy/build/pdf.min.js"
           crossorigin="anonymous"></script>

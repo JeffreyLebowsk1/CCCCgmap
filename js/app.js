@@ -901,7 +901,7 @@ async function renderPdfToImage(pdfUrl) {
  */
 async function callGeminiVision(base64Image, campusName) {
   const endpoint =
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${CONFIG.geminiApiKey}`;
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
   const prompt =
     `This is a campus map for ${campusName} (Central Carolina Community College). ` +
@@ -915,7 +915,11 @@ async function callGeminiVision(base64Image, campusName) {
 
   const response = await fetch(endpoint, {
     method:  'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type':    'application/json',
+      /* Send the key via header to avoid exposure in URLs, logs and history */
+      'x-goog-api-key':  CONFIG.geminiApiKey,
+    },
     body: JSON.stringify({
       contents: [{
         parts: [
@@ -923,7 +927,7 @@ async function callGeminiVision(base64Image, campusName) {
           { text: prompt },
         ],
       }],
-      generationConfig: { temperature: 0.1, maxOutputTokens: 1024 },
+      generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
     }),
   });
 
@@ -961,7 +965,7 @@ async function showAiVisionModal(campus) {
   }
 
   /* Guard: Gemini API key not configured */
-  if (CONFIG.geminiApiKey === 'YOUR_GEMINI_API_KEY') {
+  if (!CONFIG.geminiApiKey || CONFIG.geminiApiKey === 'YOUR_GEMINI_API_KEY') {
     results.innerHTML = `
       <div class="ai-setup-notice">
         <p>🔑 <strong>Gemini API key not configured.</strong></p>
