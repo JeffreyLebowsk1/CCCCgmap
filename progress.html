@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Progress overview of the CCCC Campus Map project – all four campuses at a glance." />
+  <title>CCCC Campus Map – Progress Overview</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── Progress page styles ─────────────────────────────── */
+
+    /* Page body sits below the fixed header */
+    .progress-body {
+      padding-top: calc(var(--header-h) + 24px);
+      padding-bottom: 48px;
+      background: var(--bg-light);
+      min-height: 100%;
+    }
+
+    /* Back-to-map link in header */
+    .header-back-link {
+      margin-left: auto;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .header-back-link:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    /* Page header text */
+    .progress-hero {
+      text-align: center;
+      padding: 32px 16px 24px;
+    }
+    .progress-hero h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--cccc-blue);
+      margin-bottom: 8px;
+    }
+    .progress-hero p {
+      color: var(--text-mid);
+      font-size: 0.97rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* Stats bar */
+    .progress-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 16px 16px 32px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cccc-blue);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Campus grid */
+    .campus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width: 700px) {
+      .campus-grid {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+      }
+    }
+
+    /* Individual campus card */
+    .campus-card {
+      background: var(--bg-white);
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .campus-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    /* Coloured top bar */
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      color: #fff;
+    }
+    .card-campus-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .card-campus-name {
+      font-size: 1rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .card-campus-tag {
+      font-size: 0.72rem;
+      background: rgba(255,255,255,0.2);
+      padding: 3px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* Embedded map */
+    .card-map {
+      width: 100%;
+      height: 240px;
+      border: none;
+      display: block;
+      background: #e8eaed;
+    }
+
+    /* Card body */
+    .card-body {
+      padding: 16px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-address {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .card-address svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      opacity: 0.6;
+    }
+
+    .card-phone {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+    }
+    .card-phone a {
+      color: var(--cccc-blue);
+      text-decoration: none;
+    }
+    .card-phone a:hover { text-decoration: underline; }
+
+    /* Building type chips */
+    .card-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .type-chip {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 12px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+      white-space: nowrap;
+    }
+
+    /* Card footer actions */
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+    .card-btn {
+      flex: 1;
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s;
+    }
+    .card-btn:hover { opacity: 0.85; }
+    .card-btn-primary {
+      color: #fff;
+    }
+    .card-btn-secondary {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+    }
+
+    /* Buildings badge */
+    .card-building-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Progress footer */
+    .progress-footer {
+      text-align: center;
+      padding: 40px 16px 16px;
+      color: var(--text-light);
+      font-size: 0.82rem;
+    }
+    .progress-footer a {
+      color: var(--cccc-blue);
+      text-decoration: none;
+    }
+    .progress-footer a:hover { text-decoration: underline; }
+
+    /* Completion badge */
+    .completion-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 16px;
+      border: 1px solid #c8e6c9;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header id="header" role="banner">
+    <a class="logo-wrap" href="https://www.cccc.edu" target="_blank"
+       rel="noopener noreferrer" aria-label="Central Carolina Community College website">
+      <div class="logo-text">
+        <strong>CCCC</strong>
+        <span>Central Carolina Community College</span>
+      </div>
+    </a>
+
+    <div class="header-sep" aria-hidden="true"></div>
+    <span class="header-title">Progress Overview</span>
+
+    <a class="header-back-link" href="index.html" aria-label="Open the interactive campus map">
+      🗺 Interactive Map
+    </a>
+  </header>
+
+  <!-- ── PAGE CONTENT ────────────────────────────────────── -->
+  <div class="progress-body">
+
+    <div class="progress-hero">
+      <div class="completion-badge" role="status">
+        ✅ All 4 campuses added
+      </div>
+      <h1>Campus Map – Progress Overview</h1>
+      <p>
+        All four Central Carolina Community College campuses have been mapped
+        with buildings, parking lots, departments, hours, and navigation support.
+      </p>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="progress-stats" aria-label="Project summary statistics">
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Campuses</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">18</div>
+        <div class="stat-label">Buildings</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Parking Lots</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Building Types</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label">PDF Maps</div>
+      </div>
+    </div>
+
+    <!-- 2×2 campus grid -->
+    <div class="campus-grid" role="list" aria-label="All CCCC campuses">
+
+      <!-- ── 1. Lee County Campus ─────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Lee County Campus">
+        <div class="card-header" style="background:#003087">
+          <div class="card-campus-number" aria-hidden="true">1</div>
+          <div class="card-campus-name">Lee County Campus</div>
+          <span class="card-campus-tag">Main Campus</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.4796,-79.1894&z=17&output=embed"
+          title="Lee County Campus map – Sanford, NC"
+          aria-label="Google Map showing Lee County Campus in Sanford, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            1105 Kelly Drive, Sanford, NC 27330
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9197755401">(919) 775-5401</a>
+          </div>
+          <div class="card-building-count">
+            🏛 9 buildings &nbsp;·&nbsp; 🅿 3 parking lots
+          </div>
+          <div class="card-types" aria-label="Building types at Lee County Campus">
+            <span class="type-chip">🎓 Academic ×5</span>
+            <span class="type-chip">🏢 Services ×1</span>
+            <span class="type-chip">📚 Library ×1</span>
+            <span class="type-chip">🔧 Trades ×1</span>
+            <span class="type-chip">⚽ Recreation ×1</span>
+            <span class="type-chip">🎭 Events ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#003087"
+               href="index.html#lee"
+               aria-label="View Lee County Campus in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/lee-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Lee County Campus PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 2. Chatham Campus ─────────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Chatham Campus">
+        <div class="card-header" style="background:#C8102E">
+          <div class="card-campus-number" aria-hidden="true">2</div>
+          <div class="card-campus-name">Chatham Campus</div>
+          <span class="card-campus-tag">Pittsboro, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.7233,-79.1770&z=17&output=embed"
+          title="Chatham Campus map – Pittsboro, NC"
+          aria-label="Google Map showing Chatham Campus in Pittsboro, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            764 West Street, Pittsboro, NC 27312
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9195426495">(919) 542-6495</a>
+          </div>
+          <div class="card-building-count">
+            🏛 4 buildings &nbsp;·&nbsp; 🅿 2 parking lots
+          </div>
+          <div class="card-types" aria-label="Building types at Chatham Campus">
+            <span class="type-chip">🎓 Academic ×2</span>
+            <span class="type-chip">📚 Library ×1</span>
+            <span class="type-chip">🔧 Trades ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#C8102E"
+               href="index.html#chatham"
+               aria-label="View Chatham Campus in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/chatham-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Chatham Campus PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 3. Harnett Campus ─────────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Harnett Campus">
+        <div class="card-header" style="background:#007A33">
+          <div class="card-campus-number" aria-hidden="true">3</div>
+          <div class="card-campus-name">Harnett Campus</div>
+          <span class="card-campus-tag">Lillington, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.3979,-78.8143&z=17&output=embed"
+          title="Harnett Campus map – Lillington, NC"
+          aria-label="Google Map showing Harnett Campus in Lillington, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            1075 E Cornelius Harnett Blvd, Lillington, NC 27546
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9108148888">(910) 814-8888</a>
+          </div>
+          <div class="card-building-count">
+            🏛 4 buildings &nbsp;·&nbsp; 🅿 2 parking lots
+          </div>
+          <div class="card-types" aria-label="Building types at Harnett Campus">
+            <span class="type-chip">🎓 Academic ×3</span>
+            <span class="type-chip">📚 Library ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#007A33"
+               href="index.html#harnett"
+               aria-label="View Harnett Campus in interactive map">
+              🗺 View on Map
+            </a>
+            <a class="card-btn card-btn-secondary"
+               href="data/pdfs/harnett-campus-map.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Harnett Campus PDF map">
+              📄 PDF Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 4. Siler City Center ───────────────────────── -->
+      <article class="campus-card" role="listitem" aria-label="Siler City Center">
+        <div class="card-header" style="background:#FF6B00">
+          <div class="card-campus-number" aria-hidden="true">4</div>
+          <div class="card-campus-name">Siler City Center</div>
+          <span class="card-campus-tag">Siler City, NC</span>
+        </div>
+
+        <iframe
+          class="card-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=35.7248,-79.4644&z=17&output=embed"
+          title="Siler City Center map – Siler City, NC"
+          aria-label="Google Map showing Siler City Center in Siler City, NC">
+        </iframe>
+
+        <div class="card-body">
+          <div class="card-address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            P.O. Box 1353, Siler City, NC 27344 <em style="font-size:0.78rem;opacity:0.7">(mailing)</em>
+          </div>
+          <div class="card-phone">
+            📞 <a href="tel:9196634060">(919) 663-4060</a>
+          </div>
+          <div class="card-building-count">
+            🏛 1 building &nbsp;·&nbsp; 🅿 1 parking lot
+          </div>
+          <div class="card-types" aria-label="Building types at Siler City Center">
+            <span class="type-chip">🎓 Academic ×1</span>
+          </div>
+          <div class="card-actions">
+            <a class="card-btn card-btn-primary"
+               style="background:#FF6B00"
+               href="index.html#siler-city"
+               aria-label="View Siler City Center in interactive map">
+              🗺 View on Map
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /campus-grid -->
+
+    <!-- Feature checklist -->
+    <section aria-labelledby="features-heading"
+             style="max-width:800px;margin:40px auto 0;padding:0 24px;">
+      <h2 id="features-heading"
+          style="font-size:1.1rem;color:var(--cccc-blue);margin-bottom:16px;font-weight:700;">
+        ✅ Features Implemented
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ All 4 campuses in <code>campuses.json</code>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ AdvancedMarkerElement + PinElement (non-deprecated)
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Building info windows with departments &amp; hours
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Turn-by-turn directions via DirectionsService
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Google Places Autocomplete search
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Campus PDF map links (3 of 4 ready)
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ OGC KML 2.2 export (<code>campuses.kml</code>)
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ ARIA accessibility + Schema.org JSON-LD
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Responsive design (desktop &amp; mobile)
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Building type filter chips
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Parking lot markers (8 lots total)
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px 14px;box-shadow:var(--shadow-sm);font-size:0.87rem;color:var(--text-mid);">
+          ✅ Street View quick-launch from buildings
+        </div>
+      </div>
+    </section>
+
+    <footer class="progress-footer" role="contentinfo">
+      <p>
+        <a href="index.html">← Back to Interactive Map</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.cccc.edu" target="_blank" rel="noopener noreferrer">
+          Central Carolina Community College
+        </a>
+        &nbsp;·&nbsp;
+        Map data © <a href="https://www.openstreetmap.org/copyright"
+                      target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>
+      </p>
+    </footer>
+
+  </div><!-- /progress-body -->
+</body>
+</html>
