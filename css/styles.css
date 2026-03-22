@@ -790,6 +790,41 @@ html, body {
 }
 .iw-btn-street:hover { background: #e0e0e0; }
 
+/* --- Multi-building campus labeled markers ---------------- */
+/*
+ * Used for campuses with more than one building so each marker
+ * displays the building code (shortName) matching the campus PDF map.
+ * AdvancedMarkerElement positions the element with its bottom-center
+ * anchored at the building's lat/lng coordinates.
+ */
+.building-marker-label {
+  background: var(--campus-color, #003087);
+  border: 2px solid var(--campus-border, #001a5c);
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  display: inline-block;
+}
+
+.building-marker-label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--campus-border, #001a5c);
+}
+
 /* --- Legend ----------------------------------------------- */
 #legend {
   position: absolute;
