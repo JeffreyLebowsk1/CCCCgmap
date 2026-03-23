@@ -272,6 +272,94 @@
       border: 1px solid #c8e6c9;
       margin-bottom: 20px;
     }
+
+    /* ── Overall completion bar ──────────────────────── */
+    .overall-progress {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+    .overall-progress-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 9px;
+    }
+    .overall-progress-label .pct-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--cccc-blue);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .overall-bar-track {
+      height: 22px;
+      background: #e9ecef;
+      border-radius: 11px;
+      overflow: hidden;
+    }
+    .overall-bar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--cccc-blue) 0%, #1565c0 100%);
+      border-radius: 11px;
+      position: relative;
+      transition: width 1.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .overall-bar-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.14) 0,
+        rgba(255,255,255,0.14) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+    }
+    .overall-bar-sub {
+      text-align: center;
+      font-size: 0.79rem;
+      color: var(--text-light);
+      margin-top: 9px;
+    }
+
+    /* ── Per-campus building mini-bar ────────────────── */
+    .building-bar-track {
+      height: 5px;
+      background: #e9ecef;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .building-bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 3px;
+      transition: width 1.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    /* ── Card entrance animation ─────────────────────── */
+    .campus-card {
+      opacity: 0;
+      translate: 0 18px;
+      transition: box-shadow 0.2s, transform 0.2s, opacity 0.4s ease, translate 0.4s ease;
+    }
+    .campus-card.card-in {
+      opacity: 1;
+      translate: 0 0;
+    }
+    /* Keep hover working once card is visible */
+    .campus-card.card-in:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 
@@ -330,6 +418,23 @@
         <div class="stat-number">12</div>
         <div class="stat-label">PDF Maps</div>
       </div>
+    </div>
+
+    <!-- Overall completion bar -->
+    <div class="overall-progress" aria-label="Overall mapping completion">
+      <div class="overall-progress-label">
+        Campuses fully mapped
+        <span class="pct-value" id="overall-pct">100%</span>
+      </div>
+      <div class="overall-bar-track"
+           role="progressbar"
+           aria-valuenow="100"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-label="100% of campuses mapped">
+        <div class="overall-bar-fill" id="overall-bar"></div>
+      </div>
+      <div class="overall-bar-sub" id="overall-bar-sub"></div>
     </div>
 
     <!-- 2×2 campus grid -->
@@ -1032,5 +1137,128 @@
     </footer>
 
   </div><!-- /progress-body -->
+
+  <script>
+    /* ── Progress page animations ───────────────────────── */
+    (function () {
+      'use strict';
+
+      var MAX_BUILDINGS = 1; /* computed dynamically below */
+
+      /* 1 ── Animate stat counter numbers (0 → target) */
+      function animateCounters() {
+        var counters = document.querySelectorAll('.stat-number');
+        counters.forEach(function (el) {
+          var target = parseInt(el.textContent, 10);
+          if (!isFinite(target)) return;
+          var startTime = null;
+          var duration = 1100;
+          el.textContent = '0';
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3); /* ease-out cubic */
+            el.textContent = String(Math.round(eased * target));
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = String(target);
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      /* 2 ── Fill the overall completion bar and populate sub-label dynamically */
+      function animateOverallBar() {
+        var bar = document.getElementById('overall-bar');
+        var sub = document.getElementById('overall-bar-sub');
+        var cards = document.querySelectorAll('.campus-card');
+        var totalCampuses = cards.length;
+        var totalLocations = 0;
+
+        cards.forEach(function (card) {
+          var countEl = card.querySelector('.card-building-count');
+          if (!countEl) return;
+          var bMatch = countEl.textContent.match(/(\d+)\s+building/);
+          var pMatch = countEl.textContent.match(/(\d+)\s+parking/);
+          var bCount = bMatch ? parseInt(bMatch[1], 10) : 0;
+          var pCount = pMatch ? parseInt(pMatch[1], 10) : 0;
+          totalLocations += bCount + pCount;
+          if (bCount > MAX_BUILDINGS) MAX_BUILDINGS = bCount;
+        });
+
+        if (sub) {
+          sub.textContent = totalCampuses + ' of ' + totalCampuses +
+            ' campuses & centers \u00b7 ' + totalLocations + ' total mapped locations';
+        }
+
+        if (bar) {
+          requestAnimationFrame(function () {
+            bar.style.width = '100%';
+          });
+        }
+      }
+
+      /* 3 ── Inject and animate per-campus building mini-bars */
+      function buildMiniBars() {
+        var cards = document.querySelectorAll('.campus-card');
+        cards.forEach(function (card) {
+          var countEl = card.querySelector('.card-building-count');
+          if (!countEl) return;
+          var header = card.querySelector('.card-header');
+          var color = (header && header.style.background) ? header.style.background : 'var(--cccc-blue)';
+          var match = countEl.textContent.match(/(\d+)\s+building/);
+          var count = match ? parseInt(match[1], 10) : 0;
+          var pct = Math.max((count / MAX_BUILDINGS) * 100, 6); /* min 6% so it's visible */
+
+          var track = document.createElement('div');
+          track.className = 'building-bar-track';
+          track.setAttribute('aria-hidden', 'true');
+          track.setAttribute('title', count + (count === 1 ? ' building' : ' buildings') + ' mapped');
+
+          var fill = document.createElement('div');
+          fill.className = 'building-bar-fill';
+          fill.style.background = color;
+          fill.dataset.target = pct.toFixed(1);
+
+          track.appendChild(fill);
+          countEl.insertAdjacentElement('afterend', track);
+        });
+
+        /* Trigger fill animation after brief delay so transition fires */
+        setTimeout(function () {
+          document.querySelectorAll('.building-bar-fill').forEach(function (fill) {
+            fill.style.width = fill.dataset.target + '%';
+          });
+        }, 350);
+      }
+
+      /* 4 ── Staggered card entrance using IntersectionObserver */
+      function staggerCards() {
+        var cards = Array.from(document.querySelectorAll('.campus-card'));
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var card = entry.target;
+              var idx = cards.indexOf(card);
+              setTimeout(function () {
+                card.classList.add('card-in');
+              }, idx * 60);
+              observer.unobserve(card);
+            }
+          });
+        }, { threshold: 0.05 });
+        cards.forEach(function (card) { observer.observe(card); });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        animateCounters();
+        animateOverallBar();
+        buildMiniBars();
+        staggerCards();
+      });
+    }());
+  </script>
 </body>
 </html>
