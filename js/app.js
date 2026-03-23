@@ -249,19 +249,33 @@ function buildSidebar(AdvancedMarkerElement, PinElement) {
 
     /* --- Place AdvancedMarkerElement markers for each building --- */
     campus.buildings.forEach(building => {
-      const pin = new PinElement({
-        background:  campus.color,
-        borderColor: shadeColor(campus.color, -30),
-        glyphColor:  '#ffffff',
-        glyph:       (BUILDING_TYPES[building.type]?.emoji) ?? '📍',
-        scale:       1.1,
-      });
+      /* Multi-building campuses use a labeled badge marker so buildings can
+         be identified on the map and matched to the campus PDF map.
+         Single-building campuses use the standard emoji pin. */
+      let markerContent;
+      if (campus.buildings.length > 1) {
+        const labelEl = document.createElement('div');
+        labelEl.className = 'building-marker-label';
+        labelEl.style.setProperty('--campus-color', campus.color);
+        labelEl.style.setProperty('--campus-border', shadeColor(campus.color, -30));
+        labelEl.textContent = building.shortName;
+        markerContent = labelEl;
+      } else {
+        const pin = new PinElement({
+          background:  campus.color,
+          borderColor: shadeColor(campus.color, -30),
+          glyphColor:  '#ffffff',
+          glyph:       (BUILDING_TYPES[building.type]?.emoji) ?? '📍',
+          scale:       1.1,
+        });
+        markerContent = pin.element;
+      }
 
       const marker = new AdvancedMarkerElement({
         map,
         position:  { lat: building.lat, lng: building.lng },
         title:     `${building.name} – ${campus.name}`,
-        content:   pin.element,
+        content:   markerContent,
         // gmpClickable is required for AdvancedMarkerElement click events
         gmpClickable: true,
       });

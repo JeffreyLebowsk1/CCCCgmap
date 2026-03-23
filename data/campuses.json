@@ -19,118 +19,311 @@
       "description": "The main Lee County campus in Sanford, NC, offering a full range of academic and workforce programs.",
       "campusPdf": "data/pdfs/lee-campus-map.pdf",
       "parkingLots": [
-        { "id": "lee-p1", "name": "Lot A – Main Entrance", "lat": 35.4802, "lng": -79.1898 },
-        { "id": "lee-p2", "name": "Lot B – East Side", "lat": 35.4790, "lng": -79.1880 },
-        { "id": "lee-p3", "name": "Lot C – West Side", "lat": 35.4799, "lng": -79.1915 }
+        {
+          "id": "lee-p1",
+          "name": "Lot A – Main Entrance",
+          "lat": 35.4802,
+          "lng": -79.1898
+        },
+        {
+          "id": "lee-p2",
+          "name": "Lot B – East Side",
+          "lat": 35.479,
+          "lng": -79.188
+        },
+        {
+          "id": "lee-p3",
+          "name": "Lot C – West Side",
+          "lat": 35.4799,
+          "lng": -79.1915
+        }
       ],
       "buildings": [
         {
           "id": "lee-b1",
-          "name": "Cameron Hall",
-          "shortName": "CAM",
-          "lat": 35.4801,
-          "lng": -79.1893,
+          "name": "Douglas H. Wilkinson Sr. Hall",
+          "shortName": "1",
+          "lat": 35.4815,
+          "lng": -79.1907,
           "type": "academic",
-          "description": "Administrative offices, admissions, financial aid, and general education classrooms.",
-          "departments": ["Administration", "Admissions", "Financial Aid", "Business Office"],
+          "description": "Academic programs including Broadcasting, Business, Engineering, Information Technologies, and Machining. Houses classrooms and faculty offices.",
+          "departments": [
+            "Broadcasting",
+            "Business Administration",
+            "Engineering",
+            "Information Technologies",
+            "Machining"
+          ],
           "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
           "id": "lee-b2",
-          "name": "Dennis A. Wicker Civic & Conference Center",
-          "shortName": "DWACC",
-          "lat": 35.4793,
-          "lng": -79.1888,
-          "type": "event",
-          "description": "Civic and conference center hosting college events, community programs, and large gatherings.",
-          "departments": ["Event Services", "Community Programs"],
-          "accessibility": true,
-          "hours": "Varies by event"
-        },
-        {
-          "id": "lee-b3",
-          "name": "Chavis Hall",
-          "shortName": "CHA",
-          "lat": 35.4806,
-          "lng": -79.1897,
-          "type": "academic",
-          "description": "Science laboratories, nursing simulation labs, and health sciences classrooms.",
-          "departments": ["Nursing", "Health Sciences", "Biology", "Chemistry"],
+          "name": "Guided Studies",
+          "shortName": "2",
+          "lat": 35.4805,
+          "lng": -79.1911,
+          "type": "services",
+          "description": "Guided Studies programs providing developmental education and academic support for students.",
+          "departments": [
+            "Guided Studies",
+            "Developmental Education"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
           "id": "lee-b4",
-          "name": "Horton Hall",
-          "shortName": "HOR",
-          "lat": 35.4797,
-          "lng": -79.1905,
+          "name": "Dalrymple Veterinary Medical Technology Building",
+          "shortName": "4",
+          "lat": 35.4805,
+          "lng": -79.1881,
           "type": "academic",
-          "description": "Technology programs, computer labs, and information technology classrooms.",
-          "departments": ["Information Technology", "Computer Science", "Electronics"],
+          "description": "Houses classrooms and labs for the Veterinary Medical Technology program, including dog kennels and cat wards.",
+          "departments": [
+            "Veterinary Medical Technology"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
           "id": "lee-b5",
-          "name": "Shank Hall",
-          "shortName": "SHA",
-          "lat": 35.4808,
-          "lng": -79.1885,
+          "name": "Veterinary Medical Technology Building",
+          "shortName": "5",
+          "lat": 35.4815,
+          "lng": -79.1895,
           "type": "academic",
-          "description": "Workforce development programs, culinary arts, and continuing education.",
-          "departments": ["Workforce Development", "Culinary Arts", "Continuing Education"],
+          "description": "Additional classrooms and labs for Veterinary Medical Technology training.",
+          "departments": [
+            "Veterinary Medical Technology"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
           "id": "lee-b6",
-          "name": "Student Services Center",
-          "shortName": "SSC",
-          "lat": 35.4804,
-          "lng": -79.1901,
-          "type": "services",
-          "description": "Student services, counseling, career center, disability services, and testing center.",
-          "departments": ["Counseling", "Career Services", "Disability Services", "Testing Center"],
-          "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
-        },
-        {
-          "id": "lee-b7",
-          "name": "Library / Learning Resource Center",
-          "shortName": "LRC",
-          "lat": 35.4800,
-          "lng": -79.1887,
+          "name": "Library",
+          "shortName": "6",
+          "lat": 35.4805,
+          "lng": -79.1898,
           "type": "library",
-          "description": "Library collections, computer labs, tutoring center, and study spaces.",
-          "departments": ["Library", "Tutoring Center", "Academic Support"],
+          "description": "Main campus library with collections, computer labs, Mailroom, Copy Center, and study spaces.",
+          "departments": [
+            "Library",
+            "Copy Center",
+            "Mailroom"
+          ],
           "accessibility": true,
           "hours": "Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM"
         },
         {
-          "id": "lee-b8",
-          "name": "Trades & Industrial Building",
-          "shortName": "TIB",
-          "lat": 35.4790,
-          "lng": -79.1906,
-          "type": "trades",
-          "description": "Automotive, welding, HVAC, electrical, and construction trades programs.",
-          "departments": ["Automotive", "Welding", "HVAC", "Electrical", "Construction Trades"],
+          "id": "lee-b7",
+          "name": "Keller Health Sciences Building",
+          "shortName": "7",
+          "lat": 35.4787,
+          "lng": -79.1895,
+          "type": "academic",
+          "description": "Health Sciences programs including Associate Degree Nursing, Dental, Sonography, and Radiology. Also houses the campus Bookstore.",
+          "departments": [
+            "Associate Degree Nursing",
+            "Dental Programs",
+            "Sonography",
+            "Radiology",
+            "Bookstore"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
-          "id": "lee-gym",
-          "name": "Physical Education / Fitness Center",
-          "shortName": "GYM",
-          "lat": 35.4786,
-          "lng": -79.1896,
+          "id": "lee-b8",
+          "name": "Bell Welcome Center",
+          "shortName": "8",
+          "lat": 35.4805,
+          "lng": -79.1893,
+          "type": "services",
+          "description": "Main welcome center providing Admissions, Career Center, Continuing Education Registration, and Placement Testing services.",
+          "departments": [
+            "Admissions",
+            "Career Center",
+            "Continuing Education",
+            "Placement Testing"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b9",
+          "name": "J. F. Hockaday Hall",
+          "shortName": "9",
+          "lat": 35.4805,
+          "lng": -79.1904,
+          "type": "services",
+          "description": "Student hub containing the Business Office, Cafeteria (Cougar Café), Registrar, Student Center, and Financial Aid Office.",
+          "departments": [
+            "Business Office",
+            "Registrar",
+            "Student Center",
+            "Financial Aid",
+            "Cafeteria"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b10",
+          "name": "Vet Lab & Dog Run",
+          "shortName": "10",
+          "lat": 35.4805,
+          "lng": -79.1876,
+          "type": "academic",
+          "description": "Veterinary laboratory and dog run facilities supporting the Veterinary Medical Technology program.",
+          "departments": [
+            "Veterinary Medical Technology"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b11",
+          "name": "Stacy Budd Hall",
+          "shortName": "11",
+          "lat": 35.4796,
+          "lng": -79.1895,
+          "type": "trades",
+          "description": "Cosmetology, Esthetics, and Information Technology programs with salon clinics and computer labs.",
+          "departments": [
+            "Cosmetology",
+            "Esthetics",
+            "Information Technology"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b12",
+          "name": "Marvin R. Joyner Hall",
+          "shortName": "12",
+          "lat": 35.4805,
+          "lng": -79.1887,
+          "type": "trades",
+          "description": "Trades programs including Automotive, Industrial Systems, Motorcycles, Welding, and Electrical.",
+          "departments": [
+            "Automotive",
+            "Industrial Systems",
+            "Motorcycle",
+            "Welding",
+            "Electrical"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b13",
+          "name": "Gilbert W. Lett Hall",
+          "shortName": "13",
+          "lat": 35.4815,
+          "lng": -79.1883,
+          "type": "academic",
+          "description": "Health sciences programs including Medical Assisting and Nursing.",
+          "departments": [
+            "Medical Assisting",
+            "Nursing"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-b14",
+          "name": "Marchant Hall",
+          "shortName": "14",
+          "lat": 35.4796,
+          "lng": -79.1888,
+          "type": "services",
+          "description": "Houses Academic Assistance, Academic Deans, President’s Office, and Human Resources. Central administration building.",
+          "departments": [
+            "Academic Assistance",
+            "Academic Deans",
+            "President’s Office",
+            "Human Resources"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "lee-b17",
+          "name": "Powell Hall",
+          "shortName": "17",
+          "lat": 35.4796,
+          "lng": -79.1902,
           "type": "recreation",
-          "description": "Gymnasium, fitness center, and physical education facilities.",
-          "departments": ["Physical Education"],
+          "description": "Gymnasium, weight room, cardio room, and Health & Fitness Science and Humanities classrooms.",
+          "departments": [
+            "Physical Education",
+            "Health & Fitness Science",
+            "Humanities"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:00 AM – 9:00 PM"
+        },
+        {
+          "id": "lee-cs",
+          "name": "Campus Security",
+          "shortName": "CS",
+          "lat": 35.4787,
+          "lng": -79.1886,
+          "type": "services",
+          "description": "Campus Security office providing safety and security services for the Lee County Campus.",
+          "departments": [
+            "Campus Security"
+          ],
+          "accessibility": true,
+          "hours": "24/7"
+        },
+        {
+          "id": "lee-lec",
+          "name": "Lee Early College Classrooms",
+          "shortName": "LEC",
+          "lat": 35.4796,
+          "lng": -79.191,
+          "type": "academic",
+          "description": "Classrooms dedicated to Lee Early College, a program allowing high school students to earn college credits.",
+          "departments": [
+            "Lee Early College"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 4:00 PM"
+        },
+        {
+          "id": "lee-dawcc",
+          "name": "Dennis A. Wicker Civic & Conference Center",
+          "shortName": "DAWCC",
+          "lat": 35.4787,
+          "lng": -79.191,
+          "type": "event",
+          "description": "Civic and conference center featuring an auditorium, exhibition hall, meeting rooms, and catering kitchen. Hosts college events, graduations, and community programs.",
+          "departments": [
+            "Event Services",
+            "Community Programs",
+            "Conference Center"
+          ],
+          "accessibility": true,
+          "hours": "Varies by event"
+        },
+        {
+          "id": "lee-moore",
+          "name": "E. Eugene Moore Manufacturing & Biotech Solutions Center",
+          "shortName": "MOORE",
+          "lat": 35.4787,
+          "lng": -79.1902,
+          "type": "trades",
+          "description": "Advanced manufacturing and biotechnology solutions center supporting workforce training and industry partnerships.",
+          "departments": [
+            "Advanced Manufacturing",
+            "Biotechnology",
+            "Workforce Development"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         }
       ]
     },
@@ -140,63 +333,104 @@
       "address": "764 West Street, Pittsboro, NC 27312",
       "phone": "(919) 542-6495",
       "lat": 35.7233,
-      "lng": -79.1770,
+      "lng": -79.177,
       "zoom": 17,
       "color": "#C8102E",
       "description": "The Chatham County campus in Pittsboro, NC, serving the Chatham County community with academic and workforce programs.",
       "campusPdf": "data/pdfs/chatham-campus-map.pdf",
       "parkingLots": [
-        { "id": "chat-p1", "name": "Main Parking Lot", "lat": 35.7237, "lng": -79.1775 },
-        { "id": "chat-p2", "name": "South Lot", "lat": 35.7228, "lng": -79.1768 }
+        {
+          "id": "chat-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.7237,
+          "lng": -79.1775
+        },
+        {
+          "id": "chat-p2",
+          "name": "South Lot",
+          "lat": 35.7228,
+          "lng": -79.1768
+        }
       ],
       "buildings": [
         {
-          "id": "chat-b1",
-          "name": "A Building – Main Building",
-          "shortName": "A",
+          "id": "chat-b41",
+          "name": "Chatham Administration Building",
+          "shortName": "41",
+          "lat": 35.7241,
+          "lng": -79.1779,
+          "type": "services",
+          "description": "Administrative offices, NCWorks Career Center – Chatham, Auto Lab, and student services.",
+          "departments": [
+            "Administration",
+            "NCWorks Career Center",
+            "Student Services",
+            "Auto Lab"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "chat-b42",
+          "name": "General Classroom and Science Lab Building",
+          "shortName": "42",
           "lat": 35.7234,
           "lng": -79.1771,
           "type": "academic",
-          "description": "Administrative offices, classrooms, computer labs, and student services for the Chatham Campus.",
-          "departments": ["Administration", "Student Services", "General Education"],
-          "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
-        },
-        {
-          "id": "chat-b2",
-          "name": "B Building – Technology Center",
-          "shortName": "B",
-          "lat": 35.7229,
-          "lng": -79.1764,
-          "type": "academic",
-          "description": "Technology classrooms, computer labs, and workforce training facilities.",
-          "departments": ["Information Technology", "Workforce Development"],
-          "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
-        },
-        {
-          "id": "chat-b3",
-          "name": "C Building – Trades Center",
-          "shortName": "C",
-          "lat": 35.7240,
-          "lng": -79.1762,
-          "type": "trades",
-          "description": "Trades and technical programs including carpentry and electrical.",
-          "departments": ["Carpentry", "Electrical", "Construction Trades"],
+          "description": "General classrooms, science labs, computer labs, and Academic Assistance Center.",
+          "departments": [
+            "General Education",
+            "Sciences",
+            "Academic Assistance Center"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
-          "id": "chat-lib",
-          "name": "Library / Media Center",
-          "shortName": "LIB",
-          "lat": 35.7236,
-          "lng": -79.1778,
-          "type": "library",
-          "description": "Library, media resources, and academic support services.",
-          "departments": ["Library", "Academic Support"],
+          "id": "chat-b45",
+          "name": "Lucier Hall",
+          "shortName": "45",
+          "lat": 35.7226,
+          "lng": -79.1764,
+          "type": "trades",
+          "description": "Culinary Arts programs with fully equipped teaching kitchen, the Natural Chef Café, and general classrooms.",
+          "departments": [
+            "Culinary Arts",
+            "Natural Chef Café"
+          ],
           "accessibility": true,
-          "hours": "Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM"
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
+        },
+        {
+          "id": "chat-ccl",
+          "name": "Chatham Community Library",
+          "shortName": "CCL",
+          "lat": 35.7241,
+          "lng": -79.1763,
+          "type": "library",
+          "description": "Public library serving both CCCC students and the Chatham County community, with study rooms and reference services.",
+          "departments": [
+            "Library",
+            "Youth Services",
+            "Reference Services"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Thu 9:00 AM – 8:00 PM, Fri–Sat 9:00 AM – 5:00 PM"
+        },
+        {
+          "id": "chat-sf",
+          "name": "Student Farm",
+          "shortName": "SF",
+          "lat": 35.7226,
+          "lng": -79.1779,
+          "type": "recreation",
+          "description": "Working student farm used for sustainable agriculture education and hands-on training.",
+          "departments": [
+            "Sustainable Agriculture",
+            "Horticulture"
+          ],
+          "accessibility": false,
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
         }
       ]
     },
@@ -212,57 +446,85 @@
       "description": "The Harnett County campus in Lillington, NC, providing academic and workforce training to the Harnett County community.",
       "campusPdf": "data/pdfs/harnett-campus-map.pdf",
       "parkingLots": [
-        { "id": "harn-p1", "name": "Main Parking Lot", "lat": 35.3984, "lng": -78.8148 },
-        { "id": "harn-p2", "name": "East Lot", "lat": 35.3975, "lng": -78.8132 }
+        {
+          "id": "harn-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3984,
+          "lng": -78.8148
+        },
+        {
+          "id": "harn-p2",
+          "name": "East Lot",
+          "lat": 35.3975,
+          "lng": -78.8132
+        }
       ],
       "buildings": [
         {
-          "id": "harn-b1",
-          "name": "Main Building",
-          "shortName": "MAIN",
-          "lat": 35.3980,
-          "lng": -78.8144,
-          "type": "academic",
-          "description": "Administrative offices, classrooms, computer labs, and student services for the Harnett Campus.",
-          "departments": ["Administration", "Student Services", "General Education"],
+          "id": "harn-b31",
+          "name": "Harnett Continuing Education Building",
+          "shortName": "31",
+          "lat": 35.3984,
+          "lng": -78.8137,
+          "type": "services",
+          "description": "Continuing Education offices, faculty workrooms, Bookstore, and classroom spaces for workforce training.",
+          "departments": [
+            "Continuing Education",
+            "Bookstore"
+          ],
           "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
         },
         {
-          "id": "harn-b2",
-          "name": "Workforce Development Center",
-          "shortName": "WDC",
-          "lat": 35.3975,
-          "lng": -78.8138,
-          "type": "academic",
-          "description": "Workforce development, continuing education, and industry training programs.",
-          "departments": ["Workforce Development", "Continuing Education"],
-          "accessibility": true,
-          "hours": "Mon–Fri 8:00 AM – 9:00 PM"
-        },
-        {
-          "id": "harn-b3",
-          "name": "Allied Health Building",
-          "shortName": "AHB",
-          "lat": 35.3985,
-          "lng": -78.8135,
-          "type": "academic",
-          "description": "Nursing, medical assisting, and allied health programs.",
-          "departments": ["Nursing", "Medical Assisting", "Allied Health"],
+          "id": "harn-b32",
+          "name": "Bob R. Etheridge Advanced Technology Building",
+          "shortName": "32",
+          "lat": 35.3984,
+          "lng": -78.8148,
+          "type": "trades",
+          "description": "Advanced technology programs including Machine Shop, IT Office, Library, and Laser Lab facilities.",
+          "departments": [
+            "Machine Shop Technology",
+            "Information Technology",
+            "Library",
+            "Laser Technology"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         },
         {
-          "id": "harn-lib",
-          "name": "Library",
-          "shortName": "LIB",
-          "lat": 35.3982,
-          "lng": -78.8150,
-          "type": "library",
-          "description": "Library, computer access, and academic support.",
-          "departments": ["Library", "Academic Support"],
+          "id": "harn-b33",
+          "name": "Samuel R. Miriello Building",
+          "shortName": "33",
+          "lat": 35.3977,
+          "lng": -78.8148,
+          "type": "services",
+          "description": "Academic Assistance Center, Financial Aid, Student Services, Veteran Affairs, Placement Testing, and Administration.",
+          "departments": [
+            "Academic Assistance",
+            "Financial Aid",
+            "Student Services",
+            "Veteran Affairs",
+            "Placement Testing"
+          ],
           "accessibility": true,
-          "hours": "Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM"
+          "hours": "Mon–Fri 8:00 AM – 5:00 PM"
+        },
+        {
+          "id": "harn-b39",
+          "name": "Cosmetic Arts and General Classroom Building",
+          "shortName": "39",
+          "lat": 35.3977,
+          "lng": -78.8137,
+          "type": "trades",
+          "description": "Cosmetology and Manicuring clinics, general classrooms, and faculty offices.",
+          "departments": [
+            "Cosmetology",
+            "Manicuring",
+            "General Education"
+          ],
+          "accessibility": true,
+          "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         }
       ]
     },
@@ -278,18 +540,27 @@
       "description": "The Siler City Center serves western Chatham County with continuing education and select curriculum programs.",
       "campusPdf": "data/pdfs/siler-city-campus-map.pdf",
       "parkingLots": [
-        { "id": "sc-p1", "name": "Main Parking Lot", "lat": 35.7252, "lng": -79.4648 }
+        {
+          "id": "sc-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.7252,
+          "lng": -79.4648
+        }
       ],
       "buildings": [
         {
           "id": "sc-b1",
           "name": "Siler City Center Main Building",
           "shortName": "MAIN",
-          "lat": 35.7250,
+          "lat": 35.725,
           "lng": -79.4645,
           "type": "academic",
           "description": "Classrooms, computer labs, and student support services for the Siler City area.",
-          "departments": ["General Education", "Continuing Education", "Student Services"],
+          "departments": [
+            "General Education",
+            "Continuing Education",
+            "Student Services"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
@@ -307,7 +578,12 @@
       "description": "The Chatham Health Sciences Center provides allied health and nursing programs for Chatham County students.",
       "campusPdf": "data/pdfs/chatham-health-sciences-campus-map.pdf",
       "parkingLots": [
-        { "id": "chs-p1", "name": "Main Parking Lot", "lat": 35.7228, "lng": -79.1762 }
+        {
+          "id": "chs-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.7228,
+          "lng": -79.1762
+        }
       ],
       "buildings": [
         {
@@ -318,7 +594,11 @@
           "lng": -79.1759,
           "type": "academic",
           "description": "Allied health classrooms, nursing simulation labs, and medical assisting programs.",
-          "departments": ["Nursing", "Allied Health", "Medical Assisting"],
+          "departments": [
+            "Nursing",
+            "Allied Health",
+            "Medical Assisting"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
@@ -336,7 +616,12 @@
       "description": "The Harnett Health Sciences Center offers allied health, nursing, and medical programs for Harnett County.",
       "campusPdf": "data/pdfs/harnett-health-sciences-campus-map.pdf",
       "parkingLots": [
-        { "id": "hhs-p1", "name": "Main Parking Lot", "lat": 35.3971, "lng": -78.8162 }
+        {
+          "id": "hhs-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3971,
+          "lng": -78.8162
+        }
       ],
       "buildings": [
         {
@@ -347,7 +632,11 @@
           "lng": -78.8159,
           "type": "academic",
           "description": "Nursing simulation labs, allied health classrooms, and medical training facilities.",
-          "departments": ["Nursing", "Allied Health", "Phlebotomy"],
+          "departments": [
+            "Nursing",
+            "Allied Health",
+            "Phlebotomy"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
@@ -358,14 +647,19 @@
       "name": "West Harnett Center",
       "address": "West Harnett, Lillington, NC 27546",
       "phone": "(910) 814-8888",
-      "lat": 35.3800,
-      "lng": -78.8400,
+      "lat": 35.38,
+      "lng": -78.84,
       "zoom": 16,
       "color": "#7C4010",
       "description": "The West Harnett Center brings CCCC programs closer to residents in western Harnett County.",
       "campusPdf": "data/pdfs/west-harnett-campus-map.pdf",
       "parkingLots": [
-        { "id": "wh-p1", "name": "Main Parking Lot", "lat": 35.3803, "lng": -78.8404 }
+        {
+          "id": "wh-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3803,
+          "lng": -78.8404
+        }
       ],
       "buildings": [
         {
@@ -376,7 +670,11 @@
           "lng": -78.8401,
           "type": "academic",
           "description": "Classrooms and workforce development facilities serving western Harnett County.",
-          "departments": ["General Education", "Workforce Development", "Continuing Education"],
+          "departments": [
+            "General Education",
+            "Workforce Development",
+            "Continuing Education"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
@@ -387,14 +685,19 @@
       "name": "Center for Workforce Innovation",
       "address": "Sanford, NC 27330",
       "phone": "(919) 775-5401",
-      "lat": 35.4740,
+      "lat": 35.474,
       "lng": -79.1825,
       "zoom": 17,
       "color": "#F0AB00",
       "description": "The Center for Workforce Innovation provides industry-driven training, corporate education, and career development programs.",
       "campusPdf": "data/pdfs/center-for-workforce-innovation-campus-map.pdf",
       "parkingLots": [
-        { "id": "cwi-p1", "name": "Main Parking Lot", "lat": 35.4743, "lng": -79.1829 }
+        {
+          "id": "cwi-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.4743,
+          "lng": -79.1829
+        }
       ],
       "buildings": [
         {
@@ -405,7 +708,12 @@
           "lng": -79.1826,
           "type": "academic",
           "description": "Corporate training suites, simulation labs, and continuing education classrooms.",
-          "departments": ["Corporate Training", "Workforce Development", "Continuing Education", "Career Development"],
+          "departments": [
+            "Corporate Training",
+            "Workforce Development",
+            "Continuing Education",
+            "Career Development"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 5:00 PM"
         }
@@ -416,15 +724,25 @@
       "name": "Dennis A. Wicker Civic & Conference Center",
       "address": "1801 Nash Street, Sanford, NC 27330",
       "phone": "(919) 774-4000",
-      "lat": 35.4760,
+      "lat": 35.476,
       "lng": -79.1843,
       "zoom": 17,
       "color": "#C8102E",
       "description": "A premier civic and conference venue in Sanford, NC hosting college events, community programs, and large gatherings.",
       "campusPdf": "data/pdfs/dennis-a-wicker-civic-conference-campus-map.pdf",
       "parkingLots": [
-        { "id": "dw-p1", "name": "Main Parking Lot", "lat": 35.4763, "lng": -79.1847 },
-        { "id": "dw-p2", "name": "Overflow Parking", "lat": 35.4756, "lng": -79.1838 }
+        {
+          "id": "dw-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.4763,
+          "lng": -79.1847
+        },
+        {
+          "id": "dw-p2",
+          "name": "Overflow Parking",
+          "lat": 35.4756,
+          "lng": -79.1838
+        }
       ],
       "buildings": [
         {
@@ -435,7 +753,11 @@
           "lng": -79.1844,
           "type": "event",
           "description": "Main conference hall, ballroom, meeting rooms, and catering facilities.",
-          "departments": ["Event Services", "Catering", "Community Programs"],
+          "departments": [
+            "Event Services",
+            "Catering",
+            "Community Programs"
+          ],
           "accessibility": true,
           "hours": "Varies by event"
         }
@@ -446,14 +768,19 @@
       "name": "Emergency Services Training Center",
       "address": "Harnett County, NC 27546",
       "phone": "(910) 814-8888",
-      "lat": 35.3810,
-      "lng": -78.8050,
+      "lat": 35.381,
+      "lng": -78.805,
       "zoom": 16,
       "color": "#CC3300",
       "description": "Specialized training facility for emergency medical services, fire science, and law enforcement programs.",
       "campusPdf": "data/pdfs/emergency-services-training-campus-map.pdf",
       "parkingLots": [
-        { "id": "estc-p1", "name": "Main Parking Lot", "lat": 35.3813, "lng": -78.8054 }
+        {
+          "id": "estc-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3813,
+          "lng": -78.8054
+        }
       ],
       "buildings": [
         {
@@ -464,7 +791,12 @@
           "lng": -78.8051,
           "type": "academic",
           "description": "EMS labs, fire science training grounds, and law enforcement simulation facilities.",
-          "departments": ["Emergency Medical Services", "Fire Science", "Law Enforcement", "Basic Law Enforcement Training"],
+          "departments": [
+            "Emergency Medical Services",
+            "Fire Science",
+            "Law Enforcement",
+            "Basic Law Enforcement Training"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 7:30 AM – 9:00 PM"
         }
@@ -476,13 +808,18 @@
       "address": "Dunn, NC 28334",
       "phone": "(910) 814-8888",
       "lat": 35.3133,
-      "lng": -78.6190,
+      "lng": -78.619,
       "zoom": 16,
       "color": "#003087",
       "description": "The Dunn Center provides curriculum and continuing education programs for residents of the Dunn area of Harnett County.",
       "campusPdf": "data/pdfs/dunn-campus-map.pdf",
       "parkingLots": [
-        { "id": "dunn-p1", "name": "Main Parking Lot", "lat": 35.3136, "lng": -78.6194 }
+        {
+          "id": "dunn-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3136,
+          "lng": -78.6194
+        }
       ],
       "buildings": [
         {
@@ -493,7 +830,11 @@
           "lng": -78.6191,
           "type": "academic",
           "description": "Classrooms, computer labs, and student support services for the Dunn community.",
-          "departments": ["General Education", "Continuing Education", "Student Services"],
+          "departments": [
+            "General Education",
+            "Continuing Education",
+            "Student Services"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }
@@ -511,7 +852,12 @@
       "description": "The Moore Center serves Moore County residents with continuing education, workforce training, and select curriculum programs.",
       "campusPdf": "data/pdfs/moore-campus-map.pdf",
       "parkingLots": [
-        { "id": "moore-p1", "name": "Main Parking Lot", "lat": 35.3504, "lng": -79.4132 }
+        {
+          "id": "moore-p1",
+          "name": "Main Parking Lot",
+          "lat": 35.3504,
+          "lng": -79.4132
+        }
       ],
       "buildings": [
         {
@@ -522,7 +868,11 @@
           "lng": -79.4129,
           "type": "academic",
           "description": "Classrooms, computer labs, and continuing education facilities for Moore County.",
-          "departments": ["General Education", "Continuing Education", "Workforce Development"],
+          "departments": [
+            "General Education",
+            "Continuing Education",
+            "Workforce Development"
+          ],
           "accessibility": true,
           "hours": "Mon–Fri 8:00 AM – 9:00 PM"
         }

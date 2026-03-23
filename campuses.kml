@@ -270,295 +270,549 @@
       <open>1</open>
 
       <Placemark>
-        <name>Cameron Hall</name>
+        <name>Douglas H. Wilkinson Sr. Hall</name>
         <description><![CDATA[
-          <b>Building Code:</b> CAM<br/>
+          <b>Building Code:</b> 1<br/>
           <b>Campus:</b> Lee County Campus<br/>
           <b>Type:</b> Academic<br/>
-          <b>Description:</b> Administrative offices, admissions, financial aid,
-          and general education classrooms.<br/>
-          <b>Departments:</b> Administration, Admissions, Financial Aid, Business Office<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4801,-79.1893&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-academic</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">CAM</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
-            <SimpleData name="campus">Lee County Campus</SimpleData>
-            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
-            <SimpleData name="phone">(919) 775-5401</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
-            <SimpleData name="departments">Administration; Admissions; Financial Aid; Business Office</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point>
-          <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1893,35.4801,0</coordinates>
-        </Point>
-      </Placemark>
-
-      <Placemark>
-        <name>Dennis A. Wicker Civic &amp; Conference Center</name>
-        <description><![CDATA[
-          <b>Building Code:</b> DWACC<br/>
-          <b>Campus:</b> Lee County Campus<br/>
-          <b>Type:</b> Event Venue<br/>
-          <b>Description:</b> Civic and conference center hosting college events,
-          community programs, and large gatherings.<br/>
-          <b>Departments:</b> Event Services, Community Programs<br/>
-          <b>Hours:</b> Varies by event<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4793,-79.1888&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-event</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">DWACC</SimpleData>
-            <SimpleData name="buildingType">event</SimpleData>
-            <SimpleData name="campus">Lee County Campus</SimpleData>
-            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
-            <SimpleData name="phone">(919) 775-5401</SimpleData>
-            <SimpleData name="hours">Varies by event</SimpleData>
-            <SimpleData name="departments">Event Services; Community Programs</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point>
-          <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1888,35.4793,0</coordinates>
-        </Point>
-      </Placemark>
-
-      <Placemark>
-        <name>Chavis Hall</name>
-        <description><![CDATA[
-          <b>Building Code:</b> CHA<br/>
-          <b>Campus:</b> Lee County Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Science laboratories, nursing simulation labs,
-          and health sciences classrooms.<br/>
-          <b>Departments:</b> Nursing, Health Sciences, Biology, Chemistry<br/>
+          <b>Description:</b> Academic programs including Broadcasting, Business, Engineering, Information Technologies, and Machining. Houses classrooms and faculty offices.<br/>
+          <b>Departments:</b> Broadcasting; Business Administration; Engineering; Information Technologies; Machining<br/>
           <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4806,-79.1897&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4815,-79.1907&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-academic</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">CHA</SimpleData>
+            <SimpleData name="buildingCode">1</SimpleData>
             <SimpleData name="buildingType">academic</SimpleData>
             <SimpleData name="campus">Lee County Campus</SimpleData>
             <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
             <SimpleData name="phone">(919) 775-5401</SimpleData>
             <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Nursing; Health Sciences; Biology; Chemistry</SimpleData>
+            <SimpleData name="departments">Broadcasting; Business Administration; Engineering; Information Technologies; Machining</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
         <Point>
           <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1897,35.4806,0</coordinates>
+          <coordinates>-79.1907,35.4815,0</coordinates>
         </Point>
       </Placemark>
-
       <Placemark>
-        <name>Horton Hall</name>
+        <name>Guided Studies</name>
         <description><![CDATA[
-          <b>Building Code:</b> HOR<br/>
-          <b>Campus:</b> Lee County Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Technology programs, computer labs, and information
-          technology classrooms.<br/>
-          <b>Departments:</b> Information Technology, Computer Science, Electronics<br/>
-          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4797,-79.1905&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-academic</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">HOR</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
-            <SimpleData name="campus">Lee County Campus</SimpleData>
-            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
-            <SimpleData name="phone">(919) 775-5401</SimpleData>
-            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Information Technology; Computer Science; Electronics</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point>
-          <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1905,35.4797,0</coordinates>
-        </Point>
-      </Placemark>
-
-      <Placemark>
-        <name>Shank Hall</name>
-        <description><![CDATA[
-          <b>Building Code:</b> SHA<br/>
-          <b>Campus:</b> Lee County Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Workforce development programs, culinary arts,
-          and continuing education.<br/>
-          <b>Departments:</b> Workforce Development, Culinary Arts, Continuing Education<br/>
-          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4808,-79.1885&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-academic</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">SHA</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
-            <SimpleData name="campus">Lee County Campus</SimpleData>
-            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
-            <SimpleData name="phone">(919) 775-5401</SimpleData>
-            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Workforce Development; Culinary Arts; Continuing Education</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point>
-          <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1885,35.4808,0</coordinates>
-        </Point>
-      </Placemark>
-
-      <Placemark>
-        <name>Student Services Center</name>
-        <description><![CDATA[
-          <b>Building Code:</b> SSC<br/>
+          <b>Building Code:</b> 2<br/>
           <b>Campus:</b> Lee County Campus<br/>
           <b>Type:</b> Student Services<br/>
-          <b>Description:</b> Student services, counseling, career center,
-          disability services, and testing center.<br/>
-          <b>Departments:</b> Counseling, Career Services, Disability Services, Testing Center<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Description:</b> Guided Studies programs providing developmental education and academic support for students.<br/>
+          <b>Departments:</b> Guided Studies; Developmental Education<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4804,-79.1901&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1911&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-services</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">SSC</SimpleData>
+            <SimpleData name="buildingCode">2</SimpleData>
             <SimpleData name="buildingType">services</SimpleData>
             <SimpleData name="campus">Lee County Campus</SimpleData>
             <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
             <SimpleData name="phone">(919) 775-5401</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
-            <SimpleData name="departments">Counseling; Career Services; Disability Services; Testing Center</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Guided Studies; Developmental Education</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
         <Point>
           <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1901,35.4804,0</coordinates>
+          <coordinates>-79.1911,35.4805,0</coordinates>
         </Point>
       </Placemark>
-
       <Placemark>
-        <name>Library / Learning Resource Center</name>
+        <name>Dalrymple Veterinary Medical Technology Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> LRC<br/>
+          <b>Building Code:</b> 4<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Houses classrooms and labs for the Veterinary Medical Technology program, including dog kennels and cat wards.<br/>
+          <b>Departments:</b> Veterinary Medical Technology<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1881&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">4</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Veterinary Medical Technology</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1881,35.4805,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Veterinary Medical Technology Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 5<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Additional classrooms and labs for Veterinary Medical Technology training.<br/>
+          <b>Departments:</b> Veterinary Medical Technology<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4815,-79.1895&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">5</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Veterinary Medical Technology</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1895,35.4815,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Library</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 6<br/>
           <b>Campus:</b> Lee County Campus<br/>
           <b>Type:</b> Library<br/>
-          <b>Description:</b> Library collections, computer labs, tutoring center,
-          and study spaces.<br/>
-          <b>Departments:</b> Library, Tutoring Center, Academic Support<br/>
+          <b>Description:</b> Main campus library with collections, computer labs, Mailroom, Copy Center, and study spaces.<br/>
+          <b>Departments:</b> Library; Copy Center; Mailroom<br/>
           <b>Hours:</b> Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4800,-79.1887&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1898&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-library</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">LRC</SimpleData>
+            <SimpleData name="buildingCode">6</SimpleData>
             <SimpleData name="buildingType">library</SimpleData>
             <SimpleData name="campus">Lee County Campus</SimpleData>
             <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
             <SimpleData name="phone">(919) 775-5401</SimpleData>
             <SimpleData name="hours">Mon–Thu 7:30 AM – 8:00 PM, Fri 7:30 AM – 5:00 PM</SimpleData>
-            <SimpleData name="departments">Library; Tutoring Center; Academic Support</SimpleData>
+            <SimpleData name="departments">Library; Copy Center; Mailroom</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
         <Point>
           <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1887,35.4800,0</coordinates>
+          <coordinates>-79.1898,35.4805,0</coordinates>
         </Point>
       </Placemark>
-
       <Placemark>
-        <name>Trades &amp; Industrial Building</name>
+        <name>Keller Health Sciences Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> TIB<br/>
+          <b>Building Code:</b> 7<br/>
           <b>Campus:</b> Lee County Campus<br/>
-          <b>Type:</b> Trades<br/>
-          <b>Description:</b> Automotive, welding, HVAC, electrical, and construction
-          trades programs.<br/>
-          <b>Departments:</b> Automotive, Welding, HVAC, Electrical, Construction Trades<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Health Sciences programs including Associate Degree Nursing, Dental, Sonography, and Radiology. Also houses the campus Bookstore.<br/>
+          <b>Departments:</b> Associate Degree Nursing; Dental Programs; Sonography; Radiology; Bookstore<br/>
           <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4790,-79.1906&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4787,-79.1895&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">7</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Associate Degree Nursing; Dental Programs; Sonography; Radiology; Bookstore</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1895,35.4787,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bell Welcome Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 8<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Main welcome center providing Admissions, Career Center, Continuing Education Registration, and Placement Testing services.<br/>
+          <b>Departments:</b> Admissions; Career Center; Continuing Education; Placement Testing<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1893&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">8</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Admissions; Career Center; Continuing Education; Placement Testing</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1893,35.4805,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>J. F. Hockaday Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 9<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Student hub containing the Business Office, Cafeteria (Cougar Café), Registrar, Student Center, and Financial Aid Office.<br/>
+          <b>Departments:</b> Business Office; Registrar; Student Center; Financial Aid; Cafeteria<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1904&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">9</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Business Office; Registrar; Student Center; Financial Aid; Cafeteria</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1904,35.4805,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vet Lab &amp; Dog Run</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 10<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Veterinary laboratory and dog run facilities supporting the Veterinary Medical Technology program.<br/>
+          <b>Departments:</b> Veterinary Medical Technology<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1876&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">10</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Veterinary Medical Technology</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1876,35.4805,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stacy Budd Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 11<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Cosmetology, Esthetics, and Information Technology programs with salon clinics and computer labs.<br/>
+          <b>Departments:</b> Cosmetology; Esthetics; Information Technology<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4796,-79.1895&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-trades</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">TIB</SimpleData>
+            <SimpleData name="buildingCode">11</SimpleData>
             <SimpleData name="buildingType">trades</SimpleData>
             <SimpleData name="campus">Lee County Campus</SimpleData>
             <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
             <SimpleData name="phone">(919) 775-5401</SimpleData>
             <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Automotive; Welding; HVAC; Electrical; Construction Trades</SimpleData>
+            <SimpleData name="departments">Cosmetology; Esthetics; Information Technology</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
         <Point>
           <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1906,35.4790,0</coordinates>
+          <coordinates>-79.1895,35.4796,0</coordinates>
         </Point>
       </Placemark>
-
       <Placemark>
-        <name>Physical Education / Fitness Center</name>
+        <name>Marvin R. Joyner Hall</name>
         <description><![CDATA[
-          <b>Building Code:</b> GYM<br/>
+          <b>Building Code:</b> 12<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Trades programs including Automotive, Industrial Systems, Motorcycles, Welding, and Electrical.<br/>
+          <b>Departments:</b> Automotive; Industrial Systems; Motorcycle; Welding; Electrical<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4805,-79.1887&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-trades</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">12</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Automotive; Industrial Systems; Motorcycle; Welding; Electrical</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1887,35.4805,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gilbert W. Lett Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 13<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Health sciences programs including Medical Assisting and Nursing.<br/>
+          <b>Departments:</b> Medical Assisting; Nursing<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4815,-79.1883&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">13</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Medical Assisting; Nursing</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1883,35.4815,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Marchant Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 14<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Houses Academic Assistance, Academic Deans, President’s Office, and Human Resources. Central administration building.<br/>
+          <b>Departments:</b> Academic Assistance; Academic Deans; President’s Office; Human Resources<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4796,-79.1888&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">14</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Academic Assistance; Academic Deans; President’s Office; Human Resources</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1888,35.4796,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Powell Hall</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 17<br/>
           <b>Campus:</b> Lee County Campus<br/>
           <b>Type:</b> Recreation<br/>
-          <b>Description:</b> Gymnasium, fitness center, and physical education facilities.<br/>
-          <b>Departments:</b> Physical Education<br/>
+          <b>Description:</b> Gymnasium, weight room, cardio room, and Health & Fitness Science and Humanities classrooms.<br/>
+          <b>Departments:</b> Physical Education; Health & Fitness Science; Humanities<br/>
           <b>Hours:</b> Mon–Fri 7:00 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4786,-79.1896&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4796,-79.1902&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-recreation</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">GYM</SimpleData>
+            <SimpleData name="buildingCode">17</SimpleData>
             <SimpleData name="buildingType">recreation</SimpleData>
             <SimpleData name="campus">Lee County Campus</SimpleData>
             <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
             <SimpleData name="phone">(919) 775-5401</SimpleData>
             <SimpleData name="hours">Mon–Fri 7:00 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Physical Education</SimpleData>
+            <SimpleData name="departments">Physical Education; Health &amp; Fitness Science; Humanities</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
         <Point>
           <altitudeMode>relativeToGround</altitudeMode>
-          <coordinates>-79.1896,35.4786,0</coordinates>
+          <coordinates>-79.1902,35.4796,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Campus Security</name>
+        <description><![CDATA[
+          <b>Building Code:</b> CS<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Campus Security office providing safety and security services for the Lee County Campus.<br/>
+          <b>Departments:</b> Campus Security<br/>
+          <b>Hours:</b> 24/7<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4787,-79.1886&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">CS</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">24/7</SimpleData>
+            <SimpleData name="departments">Campus Security</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1886,35.4787,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lee Early College Classrooms</name>
+        <description><![CDATA[
+          <b>Building Code:</b> LEC<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Academic<br/>
+          <b>Description:</b> Classrooms dedicated to Lee Early College, a program allowing high school students to earn college credits.<br/>
+          <b>Departments:</b> Lee Early College<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 4:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4796,-79.191&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-academic</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">LEC</SimpleData>
+            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 4:00 PM</SimpleData>
+            <SimpleData name="departments">Lee Early College</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.191,35.4796,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dennis A. Wicker Civic &amp; Conference Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> DAWCC<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Event Venue<br/>
+          <b>Description:</b> Civic and conference center featuring an auditorium, exhibition hall, meeting rooms, and catering kitchen. Hosts college events, graduations, and community programs.<br/>
+          <b>Departments:</b> Event Services; Community Programs; Conference Center<br/>
+          <b>Hours:</b> Varies by event<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4787,-79.191&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-event</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">DAWCC</SimpleData>
+            <SimpleData name="buildingType">event</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Varies by event</SimpleData>
+            <SimpleData name="departments">Event Services; Community Programs; Conference Center</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.191,35.4787,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>E. Eugene Moore Manufacturing &amp; Biotech Solutions Center</name>
+        <description><![CDATA[
+          <b>Building Code:</b> MOORE<br/>
+          <b>Campus:</b> Lee County Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Advanced manufacturing and biotechnology solutions center supporting workforce training and industry partnerships.<br/>
+          <b>Departments:</b> Advanced Manufacturing; Biotechnology; Workforce Development<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.4787,-79.1902&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-trades</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">MOORE</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
+            <SimpleData name="campus">Lee County Campus</SimpleData>
+            <SimpleData name="address">1105 Kelly Drive, Sanford, NC 27330</SimpleData>
+            <SimpleData name="phone">(919) 775-5401</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Advanced Manufacturing; Biotechnology; Workforce Development</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1902,35.4787,0</coordinates>
         </Point>
       </Placemark>
 
       <!-- Parking -->
       <Placemark>
-        <name>Lot A – Main Entrance (Lee County)</name>
+        <name>Lot A – Main Entrance (Lee County Campus)</name>
         <styleUrl>#style-parking</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCParking">
@@ -568,8 +822,9 @@
         </ExtendedData>
         <Point><coordinates>-79.1898,35.4802,0</coordinates></Point>
       </Placemark>
+      <!-- Parking -->
       <Placemark>
-        <name>Lot B – East Side (Lee County)</name>
+        <name>Lot B – East Side (Lee County Campus)</name>
         <styleUrl>#style-parking</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCParking">
@@ -577,10 +832,11 @@
             <SimpleData name="lotName">Lot B – East Side</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-79.1880,35.4790,0</coordinates></Point>
+        <Point><coordinates>-79.188,35.479,0</coordinates></Point>
       </Placemark>
+      <!-- Parking -->
       <Placemark>
-        <name>Lot C – West Side (Lee County)</name>
+        <name>Lot C – West Side (Lee County Campus)</name>
         <styleUrl>#style-parking</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCParking">
@@ -604,125 +860,162 @@
         Phone: (919) 542-6495<br/>
         <a href="https://www.cccc.edu/campuses/chatham/">Campus Website</a>
       ]]></description>
+      <open>1</open>
 
       <Placemark>
-        <name>A Building – Main Building (Chatham)</name>
+        <name>Chatham Administration Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> A<br/>
+          <b>Building Code:</b> 41<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Administrative offices, NCWorks Career Center – Chatham, Auto Lab, and student services.<br/>
+          <b>Departments:</b> Administration; NCWorks Career Center; Student Services; Auto Lab<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7241,-79.1779&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-services</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">41</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Administration; NCWorks Career Center; Student Services; Auto Lab</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1779,35.7241,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>General Classroom and Science Lab Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 42<br/>
           <b>Campus:</b> Chatham Campus<br/>
           <b>Type:</b> Academic<br/>
-          <b>Description:</b> Administrative offices, classrooms, computer labs,
-          and student services for the Chatham Campus.<br/>
-          <b>Departments:</b> Administration, Student Services, General Education<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Description:</b> General classrooms, science labs, computer labs, and Academic Assistance Center.<br/>
+          <b>Departments:</b> General Education; Sciences; Academic Assistance Center<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7234,-79.1771&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-academic</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">A</SimpleData>
+            <SimpleData name="buildingCode">42</SimpleData>
             <SimpleData name="buildingType">academic</SimpleData>
             <SimpleData name="campus">Chatham Campus</SimpleData>
             <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
             <SimpleData name="phone">(919) 542-6495</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Administration; Student Services; General Education</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">General Education; Sciences; Academic Assistance Center</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-79.1771,35.7234,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1771,35.7234,0</coordinates>
+        </Point>
       </Placemark>
-
       <Placemark>
-        <name>B Building – Technology Center (Chatham)</name>
+        <name>Lucier Hall</name>
         <description><![CDATA[
-          <b>Building Code:</b> B<br/>
-          <b>Campus:</b> Chatham Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Technology classrooms, computer labs, and workforce
-          training facilities.<br/>
-          <b>Departments:</b> Information Technology, Workforce Development<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7229,-79.1764&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-academic</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">B</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
-            <SimpleData name="campus">Chatham Campus</SimpleData>
-            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
-            <SimpleData name="phone">(919) 542-6495</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Information Technology; Workforce Development</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point><coordinates>-79.1764,35.7229,0</coordinates></Point>
-      </Placemark>
-
-      <Placemark>
-        <name>C Building – Trades Center (Chatham)</name>
-        <description><![CDATA[
-          <b>Building Code:</b> C<br/>
+          <b>Building Code:</b> 45<br/>
           <b>Campus:</b> Chatham Campus<br/>
           <b>Type:</b> Trades<br/>
-          <b>Description:</b> Trades and technical programs including carpentry
-          and electrical.<br/>
-          <b>Departments:</b> Carpentry, Electrical, Construction Trades<br/>
+          <b>Description:</b> Culinary Arts programs with fully equipped teaching kitchen, the Natural Chef Café, and general classrooms.<br/>
+          <b>Departments:</b> Culinary Arts; Natural Chef Café<br/>
           <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7240,-79.1762&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7226,-79.1764&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-trades</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">C</SimpleData>
+            <SimpleData name="buildingCode">45</SimpleData>
             <SimpleData name="buildingType">trades</SimpleData>
             <SimpleData name="campus">Chatham Campus</SimpleData>
             <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
             <SimpleData name="phone">(919) 542-6495</SimpleData>
             <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Carpentry; Electrical; Construction Trades</SimpleData>
+            <SimpleData name="departments">Culinary Arts; Natural Chef Café</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-79.1762,35.7240,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1764,35.7226,0</coordinates>
+        </Point>
       </Placemark>
-
       <Placemark>
-        <name>Library / Media Center (Chatham)</name>
+        <name>Chatham Community Library</name>
         <description><![CDATA[
-          <b>Building Code:</b> LIB<br/>
+          <b>Building Code:</b> CCL<br/>
           <b>Campus:</b> Chatham Campus<br/>
           <b>Type:</b> Library<br/>
-          <b>Description:</b> Library, media resources, and academic support services.<br/>
-          <b>Departments:</b> Library, Academic Support<br/>
-          <b>Hours:</b> Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM<br/>
+          <b>Description:</b> Public library serving both CCCC students and the Chatham County community, with study rooms and reference services.<br/>
+          <b>Departments:</b> Library; Youth Services; Reference Services<br/>
+          <b>Hours:</b> Mon–Thu 9:00 AM – 8:00 PM, Fri–Sat 9:00 AM – 5:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7236,-79.1778&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7241,-79.1763&amp;travelmode=driving">Get Directions</a>
         ]]></description>
         <styleUrl>#style-library</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">LIB</SimpleData>
+            <SimpleData name="buildingCode">CCL</SimpleData>
             <SimpleData name="buildingType">library</SimpleData>
             <SimpleData name="campus">Chatham Campus</SimpleData>
             <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
             <SimpleData name="phone">(919) 542-6495</SimpleData>
-            <SimpleData name="hours">Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM</SimpleData>
-            <SimpleData name="departments">Library; Academic Support</SimpleData>
+            <SimpleData name="hours">Mon–Thu 9:00 AM – 8:00 PM, Fri–Sat 9:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Library; Youth Services; Reference Services</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-79.1778,35.7236,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1763,35.7241,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Student Farm</name>
+        <description><![CDATA[
+          <b>Building Code:</b> SF<br/>
+          <b>Campus:</b> Chatham Campus<br/>
+          <b>Type:</b> Recreation<br/>
+          <b>Description:</b> Working student farm used for sustainable agriculture education and hands-on training.<br/>
+          <b>Departments:</b> Sustainable Agriculture; Horticulture<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
+          <b>Wheelchair Accessible:</b> No<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7226,-79.1779&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-recreation</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">SF</SimpleData>
+            <SimpleData name="buildingType">recreation</SimpleData>
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="address">764 West Street, Pittsboro, NC 27312</SimpleData>
+            <SimpleData name="phone">(919) 542-6495</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Sustainable Agriculture; Horticulture</SimpleData>
+            <SimpleData name="accessible">false</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-79.1779,35.7226,0</coordinates>
+        </Point>
       </Placemark>
 
       <!-- Parking -->
       <Placemark>
-        <name>Main Parking Lot (Chatham)</name>
+        <name>Main Parking Lot (Chatham Campus)</name>
         <styleUrl>#style-parking</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCParking">
@@ -731,6 +1024,18 @@
           </SchemaData>
         </ExtendedData>
         <Point><coordinates>-79.1775,35.7237,0</coordinates></Point>
+      </Placemark>
+      <!-- Parking -->
+      <Placemark>
+        <name>South Lot (Chatham Campus)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Chatham Campus</SimpleData>
+            <SimpleData name="lotName">South Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-79.1768,35.7228,0</coordinates></Point>
       </Placemark>
 
     </Folder><!-- /Chatham -->
@@ -746,124 +1051,132 @@
         Phone: (910) 814-8888<br/>
         <a href="https://www.cccc.edu/campuses/harnett/">Campus Website</a>
       ]]></description>
+      <open>1</open>
 
       <Placemark>
-        <name>Main Building (Harnett)</name>
+        <name>Harnett Continuing Education Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> MAIN<br/>
+          <b>Building Code:</b> 31<br/>
           <b>Campus:</b> Harnett Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Administrative offices, classrooms, computer labs,
-          and student services for the Harnett Campus.<br/>
-          <b>Departments:</b> Administration, Student Services, General Education<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Continuing Education offices, faculty workrooms, Bookstore, and classroom spaces for workforce training.<br/>
+          <b>Departments:</b> Continuing Education; Bookstore<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3980,-78.8144&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3984,-78.8137&amp;travelmode=driving">Get Directions</a>
         ]]></description>
-        <styleUrl>#style-academic</styleUrl>
+        <styleUrl>#style-services</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">MAIN</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="buildingCode">31</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
             <SimpleData name="campus">Harnett Campus</SimpleData>
-            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="address">1075 East Cornelius Harnett Boulevard, Lillington, NC 27546</SimpleData>
             <SimpleData name="phone">(910) 814-8888</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Administration; Student Services; General Education</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Continuing Education; Bookstore</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-78.8144,35.3980,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-78.8137,35.3984,0</coordinates>
+        </Point>
       </Placemark>
-
       <Placemark>
-        <name>Workforce Development Center (Harnett)</name>
+        <name>Bob R. Etheridge Advanced Technology Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> WDC<br/>
+          <b>Building Code:</b> 32<br/>
           <b>Campus:</b> Harnett Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Workforce development, continuing education,
-          and industry training programs.<br/>
-          <b>Departments:</b> Workforce Development, Continuing Education<br/>
-          <b>Hours:</b> Mon–Fri 8:00 AM – 9:00 PM<br/>
-          <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3975,-78.8138&amp;travelmode=driving">Get Directions</a>
-        ]]></description>
-        <styleUrl>#style-academic</styleUrl>
-        <ExtendedData>
-          <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">WDC</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
-            <SimpleData name="campus">Harnett Campus</SimpleData>
-            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
-            <SimpleData name="phone">(910) 814-8888</SimpleData>
-            <SimpleData name="hours">Mon–Fri 8:00 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Workforce Development; Continuing Education</SimpleData>
-            <SimpleData name="accessible">true</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-        <Point><coordinates>-78.8138,35.3975,0</coordinates></Point>
-      </Placemark>
-
-      <Placemark>
-        <name>Allied Health Building (Harnett)</name>
-        <description><![CDATA[
-          <b>Building Code:</b> AHB<br/>
-          <b>Campus:</b> Harnett Campus<br/>
-          <b>Type:</b> Academic<br/>
-          <b>Description:</b> Nursing, medical assisting, and allied health programs.<br/>
-          <b>Departments:</b> Nursing, Medical Assisting, Allied Health<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Advanced technology programs including Machine Shop, IT Office, Library, and Laser Lab facilities.<br/>
+          <b>Departments:</b> Machine Shop Technology; Information Technology; Library; Laser Technology<br/>
           <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3985,-78.8135&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3984,-78.8148&amp;travelmode=driving">Get Directions</a>
         ]]></description>
-        <styleUrl>#style-academic</styleUrl>
+        <styleUrl>#style-trades</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">AHB</SimpleData>
-            <SimpleData name="buildingType">academic</SimpleData>
+            <SimpleData name="buildingCode">32</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
             <SimpleData name="campus">Harnett Campus</SimpleData>
-            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="address">1075 East Cornelius Harnett Boulevard, Lillington, NC 27546</SimpleData>
             <SimpleData name="phone">(910) 814-8888</SimpleData>
             <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
-            <SimpleData name="departments">Nursing; Medical Assisting; Allied Health</SimpleData>
+            <SimpleData name="departments">Machine Shop Technology; Information Technology; Library; Laser Technology</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-78.8135,35.3985,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-78.8148,35.3984,0</coordinates>
+        </Point>
       </Placemark>
-
       <Placemark>
-        <name>Library (Harnett)</name>
+        <name>Samuel R. Miriello Building</name>
         <description><![CDATA[
-          <b>Building Code:</b> LIB<br/>
+          <b>Building Code:</b> 33<br/>
           <b>Campus:</b> Harnett Campus<br/>
-          <b>Type:</b> Library<br/>
-          <b>Description:</b> Library, computer access, and academic support.<br/>
-          <b>Departments:</b> Library, Academic Support<br/>
-          <b>Hours:</b> Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM<br/>
+          <b>Type:</b> Student Services<br/>
+          <b>Description:</b> Academic Assistance Center, Financial Aid, Student Services, Veteran Affairs, Placement Testing, and Administration.<br/>
+          <b>Departments:</b> Academic Assistance; Financial Aid; Student Services; Veteran Affairs; Placement Testing<br/>
+          <b>Hours:</b> Mon–Fri 8:00 AM – 5:00 PM<br/>
           <b>Wheelchair Accessible:</b> Yes<br/>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3982,-78.8150&amp;travelmode=driving">Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3977,-78.8148&amp;travelmode=driving">Get Directions</a>
         ]]></description>
-        <styleUrl>#style-library</styleUrl>
+        <styleUrl>#style-services</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCBuilding">
-            <SimpleData name="buildingCode">LIB</SimpleData>
-            <SimpleData name="buildingType">library</SimpleData>
+            <SimpleData name="buildingCode">33</SimpleData>
+            <SimpleData name="buildingType">services</SimpleData>
             <SimpleData name="campus">Harnett Campus</SimpleData>
-            <SimpleData name="address">1075 E. Cornelius Harnett Blvd, Lillington, NC 27546</SimpleData>
+            <SimpleData name="address">1075 East Cornelius Harnett Boulevard, Lillington, NC 27546</SimpleData>
             <SimpleData name="phone">(910) 814-8888</SimpleData>
-            <SimpleData name="hours">Mon–Thu 8:00 AM – 7:00 PM, Fri 8:00 AM – 5:00 PM</SimpleData>
-            <SimpleData name="departments">Library; Academic Support</SimpleData>
+            <SimpleData name="hours">Mon–Fri 8:00 AM – 5:00 PM</SimpleData>
+            <SimpleData name="departments">Academic Assistance; Financial Aid; Student Services; Veteran Affairs; Placement Testing</SimpleData>
             <SimpleData name="accessible">true</SimpleData>
           </SchemaData>
         </ExtendedData>
-        <Point><coordinates>-78.8150,35.3982,0</coordinates></Point>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-78.8148,35.3977,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cosmetic Arts and General Classroom Building</name>
+        <description><![CDATA[
+          <b>Building Code:</b> 39<br/>
+          <b>Campus:</b> Harnett Campus<br/>
+          <b>Type:</b> Trades<br/>
+          <b>Description:</b> Cosmetology and Manicuring clinics, general classrooms, and faculty offices.<br/>
+          <b>Departments:</b> Cosmetology; Manicuring; General Education<br/>
+          <b>Hours:</b> Mon–Fri 7:30 AM – 9:00 PM<br/>
+          <b>Wheelchair Accessible:</b> Yes<br/>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=35.3977,-78.8137&amp;travelmode=driving">Get Directions</a>
+        ]]></description>
+        <styleUrl>#style-trades</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCBuilding">
+            <SimpleData name="buildingCode">39</SimpleData>
+            <SimpleData name="buildingType">trades</SimpleData>
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="address">1075 East Cornelius Harnett Boulevard, Lillington, NC 27546</SimpleData>
+            <SimpleData name="phone">(910) 814-8888</SimpleData>
+            <SimpleData name="hours">Mon–Fri 7:30 AM – 9:00 PM</SimpleData>
+            <SimpleData name="departments">Cosmetology; Manicuring; General Education</SimpleData>
+            <SimpleData name="accessible">true</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <coordinates>-78.8137,35.3977,0</coordinates>
+        </Point>
       </Placemark>
 
       <!-- Parking -->
       <Placemark>
-        <name>Main Parking Lot (Harnett)</name>
+        <name>Main Parking Lot (Harnett Campus)</name>
         <styleUrl>#style-parking</styleUrl>
         <ExtendedData>
           <SchemaData schemaUrl="#CCCCParking">
@@ -872,6 +1185,18 @@
           </SchemaData>
         </ExtendedData>
         <Point><coordinates>-78.8148,35.3984,0</coordinates></Point>
+      </Placemark>
+      <!-- Parking -->
+      <Placemark>
+        <name>East Lot (Harnett Campus)</name>
+        <styleUrl>#style-parking</styleUrl>
+        <ExtendedData>
+          <SchemaData schemaUrl="#CCCCParking">
+            <SimpleData name="campus">Harnett Campus</SimpleData>
+            <SimpleData name="lotName">East Lot</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point><coordinates>-78.8132,35.3975,0</coordinates></Point>
       </Placemark>
 
     </Folder><!-- /Harnett -->
